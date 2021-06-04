@@ -6,6 +6,10 @@
     "start": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
+    "install:husky": "husky install",
+    "lint:pretty": "pretty-quick --staged",
+    "lint:lint-staged": "lint-staged -c ./.husky/lintstagedrc.js",
+    "lint:eslint": "eslint \"src/**/*.{vue,ts,tsx}\" --fix",
     "lint:stylelint": "stylelint --fix \"**/*.{tsx,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/"
   },
   "dependencies": {
@@ -14,12 +18,22 @@
     "react-dom": "^17.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.26.0",
     "@typescript-eslint/parser": "^4.26.0",
+    "commitizen": "^4.2.4",
     "eslint": "^7.27.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-define-config": "^1.0.8",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "husky": "6.0.0",
+    "lint-staged": "^11.0.0",
     "prettier": "^2.3.0",
+    "pretty-quick": "^3.1.0",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^22.0.0",

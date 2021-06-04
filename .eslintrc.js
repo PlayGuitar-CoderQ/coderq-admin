@@ -14,6 +14,13 @@ module.exports = defineConfig({
     node: true,
     es6: true,
   },
+  // 共享设置
+  settings: {
+    react: {
+      flowVersion: '0.53',
+      version: 'detect',
+    },
+  },
   // Eslint默认处理es5,使用该配置修改相关配置
   parserOptions: {
     // 指定解析器
@@ -87,7 +94,5 @@ module.exports = defineConfig({
     'react/display-name': 'off',
     // 防止 JSX 上下文提供程序值采用会导致不必要的重新渲染的值。
     'react/jsx-no-constructed-context-values': 'warn',
-    // 防止无效的Dom传递子节点
-    '	react/void-dom-elements-no-children': 'warn',
   },
 });
