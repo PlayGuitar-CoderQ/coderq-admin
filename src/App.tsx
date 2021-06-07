@@ -1,22 +1,11 @@
 import React from 'react';
-
-import './App.css';
+import { Button } from 'antd';
 
 const App = () => {
-  const test = () => {
-    return new Promise((resolve, resject) => {
-      resolve(123);
-      resject(new Error());
-    });
-  };
-
-  test().then((res) => {
-    console.log(res);
-  });
-
   return (
     <div className="App">
-      <span>12312</span>
+      <h2>初始化 React+ts+vite2+ant</h2>
+      <Button type="primary">增加</Button>
     </div>
   );
 };
