@@ -10,7 +10,8 @@
     "lint:pretty": "pretty-quick --staged",
     "lint:lint-staged": "lint-staged -c ./.husky/lintstagedrc.js",
     "lint:eslint": "eslint \"src/**/*.{vue,ts,tsx}\" --fix",
-    "lint:stylelint": "stylelint --fix \"**/*.{tsx,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/"
+    "lint:stylelint": "stylelint --fix \"**/*.{tsx,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
+    "lint:all": "yarn run lint:eslint && yarn run lint:stylelint"
   },
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
@@ -45,6 +46,7 @@
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-order": "^4.1.0",
+    "ts-node": "^10.0.0",
     "typescript": "^4.3.2",
     "vite": "^2.3.4",
     "vite-plugin-imp": "^2.0.7",

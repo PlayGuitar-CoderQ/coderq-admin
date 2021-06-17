@@ -14,8 +14,6 @@ import {
 import { getThemeColors, generateColors } from '../../config/themeConfig';
 import { generateModifyVars } from '../../generate/generateModifyVars';
 
-console.log('getThemeColors', getThemeColors);
-
 export function configThemePlugin(isBuild: boolean): Plugin[] {
   const colors = generateColors({
     mixDarken,

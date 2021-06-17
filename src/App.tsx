@@ -1,12 +1,10 @@
 import React from 'react';
-import { Button } from 'antd';
+import LoginPage from '@/views/Login';
 
 const App = () => {
   return (
     <div className="App">
-      <h2>初始化 React+ts+vite2+ant</h2>
-      <Button type="primary">增加</Button>
-      <Button type="dashed">增加</Button>
+      <LoginPage />
     </div>
   );
 };
