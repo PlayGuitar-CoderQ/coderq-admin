@@ -18,14 +18,14 @@ const Login: FC = () => {
             <Form.Item>
               <Input
                 placeholder="请输入账号"
-                style={{ width: '160px' }}
+                style={{ width: '260px' }}
                 suffix={<UserOutlined />}
               />
             </Form.Item>
             <Form.Item>
               <Input.Password
                 placeholder="请输入密码"
-                style={{ width: '160px' }}
+                style={{ width: '260px' }}
               />
             </Form.Item>
             <Form.Item>

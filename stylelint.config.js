@@ -79,6 +79,7 @@ module.exports = {
     // 按照指定顺序排列
     'order/properties-order': [
       'position',
+      'content',
       'top',
       'right',
       'bottom',
@@ -182,7 +183,6 @@ module.exports = {
       'border-radius-bottomright',
       'border-radius-bottomleft',
       'border-radius-topleft',
-      'content',
       'quotes',
       'outline',
       'outline-offset',
