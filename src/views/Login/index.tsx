@@ -1,11 +1,18 @@
 import React, { FC } from 'react';
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button, Switch } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
+import IconFont from '@/components/IconFont';
 import './index.less';
 
 const Login: FC = () => {
   return (
     <div className="content">
+      <Switch
+        className="switch-is_dark"
+        checkedChildren={<IconFont type={'icon-taiyang'} />}
+        unCheckedChildren={<IconFont type={'icon-yueliang'} />}
+        defaultChecked
+      />
       <div className="login-content">
         <div className="login-form-main">
           <img
