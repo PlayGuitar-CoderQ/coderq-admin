@@ -94,5 +94,7 @@ module.exports = defineConfig({
     'react/display-name': 'off',
     // 防止 JSX 上下文提供程序值采用会导致不必要的重新渲染的值。
     'react/jsx-no-constructed-context-values': 'warn',
+    //
+    'react/prop-types': 0,
   },
 });

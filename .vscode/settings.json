@@ -178,5 +178,6 @@
       // 使用stylelint格式化代码
       "source.fixAll.stylelint": true
     }
-  }
+  },
+  "compile-hero.disable-compile-files-on-did-save-code": true
 }

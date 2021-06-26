@@ -1,20 +1,88 @@
-body {
-  background-color: darken(#252b37, 4%);
-}
-
 .content {
-  display: flex;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
+  // 波浪效果
+  @keyframes rotate {
+    from {
+      transform: translateX(-50%) rotateZ(0deg);
+    }
 
-  .switch-is_dark {
-    position: absolute;
-    top: 20px;
-    right: 60px;
+    to {
+      transform: translateX(-50%) rotateZ(360deg);
+    }
   }
 
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #40a9ff;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: '';
+    bottom: 55%;
+    left: 50%;
+    width: 200%;
+    height: 350%;
+    // background-color: #262626;
+    background-color: #fff;
+    border-radius: 45%;
+    transform: translateX(-50%); // 居中
+    animation: rotate 15s linear infinite;
+  }
+
+  &::before {
+    bottom: 50%;
+    border-radius: 47%;
+    opacity: 0.5;
+  }
+
+  // 切换黑暗主题开关
+  .switch-is_dark {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 99;
+  }
+
+  // 打字效果
+  .typewriter {
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 190px;
+      }
+    }
+
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    z-index: 99;
+    display: flex;
+    font-size: 23px;
+    font-weight: bold;
+    color: orange;
+    transform: translateX(-50%);
+
+    .typewriter-text {
+      display: flex;
+      overflow: hidden;
+      color: #40a9ff;
+      white-space: nowrap;
+      animation: typing 5.5s steps(40, end), step-end infinite;
+    }
+  }
+
+  // 登录内容
   .login-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 99;
+    transform: translate(-175px, -200px);
+
     .back_light(@y, @spread, @colorA, @colorB, @duration) {
       @keyframes animateGlow {
         0% {
@@ -51,7 +119,9 @@ body {
       width: 350px;
       height: 400px;
       min-width: 300px;
-      background-color: #151823;
+      background-color: #fff;
+      // background-color: #262626;
+      border-radius: 20px;
       animation: textColor 10s ease infinite;
       .back_light(20px, 1.9vw,#0fffc1, #6600ff, 10s);
 
