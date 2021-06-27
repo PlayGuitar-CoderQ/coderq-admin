@@ -30,9 +30,5 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
         },
       },
     },
-    // 项目启动自动打开
-    server: {
-      open: '/',
-    },
   };
 };
