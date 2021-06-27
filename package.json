@@ -11,13 +11,18 @@
     "lint:lint-staged": "lint-staged -c ./.husky/lintstagedrc.js",
     "lint:eslint": "eslint \"src/**/*.{vue,ts,tsx}\" --fix",
     "lint:stylelint": "stylelint --fix \"**/*.{tsx,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
-    "lint:all": "yarn run lint:eslint && yarn run lint:stylelint"
+    "lint:all": "npm run lint:eslint && npm run lint:stylelint"
   },
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
     "antd": "^4.16.2",
+    "history": "^5.0.0",
+    "mobx": "^6.3.2",
+    "mobx-react": "^7.2.0",
+    "nanoid": "^3.1.23",
     "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react-dom": "^17.0.0",
+    "react-router-dom": "^6.0.0-beta.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",

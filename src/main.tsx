@@ -1,24 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import App from './App';
+import App from './App';
+
+import '@/utils/console'; // console窗口打印个人标志
 import '@/styles/index.less';
-import LoginPage from '@/views/Login';
 
-console.log(`
-
- ██████╗ ██████╗ ██████╗ ███████╗██████╗  ██████╗          █████╗ ██████╗ ███╗   ███╗██╗███╗   ██╗
- ██╔════╝██╔═══██╗██╔══██╗██╔════╝██╔══██╗██╔═══██╗        ██╔══██╗██╔══██╗████╗ ████║██║████╗  ██║
- ██║     ██║   ██║██║  ██║█████╗  ██████╔╝██║   ██║        ███████║██║  ██║██╔████╔██║██║██╔██╗ ██║
- ██║     ██║   ██║██║  ██║██╔══╝  ██╔══██╗██║▄▄ ██║        ██╔══██║██║  ██║██║╚██╔╝██║██║██║╚██╗██║
- ╚██████╗╚██████╔╝██████╔╝███████╗██║  ██║╚██████╔╝███████╗██║  ██║██████╔╝██║ ╚═╝ ██║██║██║ ╚████║
-  ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝ ╚══▀▀═╝ ╚══════╝╚═╝  ╚═╝╚═════╝ ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝
-
-                                                                                            ------⚡️author: CoderQ
-`);
-
-ReactDOM.render(
-  <React.StrictMode>
-    <LoginPage />
-  </React.StrictMode>,
-  document.getElementById('root'),
-);
+ReactDOM.render(<App />, document.getElementById('root'));

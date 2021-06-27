@@ -1,11 +1,12 @@
 import React from 'react';
-import LoginPage from '@/views/Login';
+import { BrowserRouter } from 'react-router-dom';
+import { RenderRouter } from '@/routes';
 
 const App = () => {
   return (
-    <div className="App">
-      <LoginPage />
-    </div>
+    <BrowserRouter>
+      <RenderRouter />
+    </BrowserRouter>
   );
 };
 

@@ -1,9 +1,13 @@
 import React, { FC } from 'react';
+
 import { Form, Input, Button, Switch } from 'antd';
 import { ReconciliationOutlined } from '@ant-design/icons';
 import { UserOutlined } from '@ant-design/icons';
 import IconFont from '@/components/IconFont';
 import Typwriter from '@/components/Typewriter';
+
+import { observer } from 'mobx-react';
+import { TypeWriterTextEnum } from '@/enums/appEnum';
 import './index.less';
 
 const Login: FC = () => {
@@ -13,8 +17,8 @@ const Login: FC = () => {
       <Typwriter
         pClassName={'typewriter'}
         spanClassName={'typewriter-text'}
-        spanText={'弹吉他的CoderQ'}
-        pText={'欢迎回来👽️🤡🧐：'}
+        spanText={TypeWriterTextEnum.FIRSTEXT}
+        pText={TypeWriterTextEnum.ENDTEXT}
       />
       {/* 登录内容 */}
       <div className="login-content">
@@ -63,4 +67,4 @@ const Login: FC = () => {
   );
 };
 
-export default Login;
+export default observer(Login);
