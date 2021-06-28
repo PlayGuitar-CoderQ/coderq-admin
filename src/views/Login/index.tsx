@@ -6,8 +6,8 @@ import { UserOutlined } from '@ant-design/icons';
 import IconFont from '@/components/IconFont';
 import Typwriter from '@/components/Typewriter';
 
-import { observer } from 'mobx-react';
 import { TypeWriterTextEnum } from '@/enums/appEnum';
+import unUserImg from '@/assets/Page/un_user.jpg';
 import './index.less';
 
 const Login: FC = () => {
@@ -31,11 +31,7 @@ const Login: FC = () => {
             defaultChecked
           />
 
-          <img
-            className="login-avatar"
-            src="https://avatars.githubusercontent.com/u/55419399?v=4"
-            alt=""
-          />
+          <img className="login-avatar" src={unUserImg} />
 
           <Form className="form-main">
             <Form.Item>
@@ -67,4 +63,4 @@ const Login: FC = () => {
   );
 };
 
-export default observer(Login);
+export default Login;
