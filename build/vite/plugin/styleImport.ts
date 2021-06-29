@@ -1,12 +1,15 @@
-import vitePluginImp from 'vite-plugin-imp';
+/**
+ * @description 用于按需导入组件库样式
+ */
+import styleImport from 'vite-plugin-style-import';
 
-export function configStyleImportPlugin(isBuild: boolean) {
-  if (isBuild) return [];
-  const styleImportPlugin = vitePluginImp({
-    libList: [
+export function configStyleImportPlugin() {
+  const styleImportPlugin = styleImport({
+    libs: [
       {
-        libName: 'antd',
-        style: (name) => `antd/lib/${name}/style/index.less`,
+        libraryName: 'antd',
+        esModule: true,
+        resolveStyle: (name) => `antd/lib/${name}/style/index.less`,
       },
     ],
   });
