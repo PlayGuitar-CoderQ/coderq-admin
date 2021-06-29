@@ -6,6 +6,7 @@ const Dashboard: FC = observer(() => {
   const appStore = useStore('appStore');
   const changeSign = () => {
     appStore.setSign('mobx测试');
+    console.log('dark', appStore.darkMode);
   };
   return (
     <div>

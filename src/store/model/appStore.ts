@@ -1,17 +1,20 @@
 import { makeAutoObservable } from 'mobx';
+import { ThemeEnum } from '@/enums/appEnum';
+import { APP_DARK_MODE_KEY_ } from '@/enums/cachEnum';
 
 export interface AppStore {
-  darkMode: boolean;
+  darkMode?: ThemeEnum;
   sign: string;
-  setDarkMode: (darkMode: boolean) => void;
+  setDarkMode: (darkMode: ThemeEnum) => void;
   setSign: (sign: string) => void;
 }
 
 const appStore = makeAutoObservable<AppStore>({
-  darkMode: false,
+  darkMode: undefined,
   sign: 'CoderQ',
-  setDarkMode(darkMode: boolean) {
+  setDarkMode(darkMode: ThemeEnum): void {
     this.darkMode = darkMode;
+    localStorage.setItem(APP_DARK_MODE_KEY_, darkMode);
   },
   setSign(sign: string) {
     this.sign = sign;
