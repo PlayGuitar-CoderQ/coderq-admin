@@ -3,7 +3,7 @@ import { generate } from '@ant-design/colors';
 export const darkMode = 'light';
 
 // 默认主题颜色
-export const primaryColor = '#a0d911';
+export const primaryColor = '#0960bd';
 
 type Fn = (...arg: any) => any;
 
@@ -81,23 +81,6 @@ export function generateColors({
         .toHexString();
     })
     .filter((item) => item !== '#000000');
-
-  console.log(
-    'lightens',
-    lightens,
-    'darkens',
-    darkens,
-    'alphaColors',
-    alphaColors,
-    'shortAlphaColors',
-    shortAlphaColors,
-    'tinycolorLightens',
-    tinycolorLightens,
-    'tinycolorDarkens',
-    tinycolorDarkens,
-    'getThemeColors',
-    getThemeColors(),
-  );
 
   return [
     ...lightens,

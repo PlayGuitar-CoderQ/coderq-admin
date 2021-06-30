@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="htmlRoot">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
@@ -7,6 +7,16 @@
     <title>CoderQ博客后台</title>
   </head>
   <body>
+    <script>
+      (() => {
+        var htmlRoot = document.getElementById('htmlRoot');
+        var theme = window.localStorage.getItem('__APP__DARK__MODE__');
+        if (htmlRoot && theme) {
+          htmlRoot.setAttribute('data-theme', theme);
+          theme = htmlRoot = null;
+        }
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

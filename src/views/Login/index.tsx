@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 
 import { Form, Input, Button, Switch } from 'antd';
 import { ReconciliationOutlined } from '@ant-design/icons';
@@ -6,13 +6,32 @@ import { UserOutlined } from '@ant-design/icons';
 import IconFont from '@/components/IconFont';
 import Typwriter from '@/components/Typewriter';
 
-import { TypeWriterTextEnum } from '@/enums/appEnum';
+import { TypeWriterTextEnum, ThemeEnum } from '@/enums/appEnum';
+import { useStore } from '@/hooks/setting';
+import { APP_STORE } from '@/store/model/appStore';
+import { updateDarkThem } from '@/logic/theme/dark';
 import unUserImg from '@/assets/Page/un_user.jpg';
 import './index.less';
 
 const Login: FC = () => {
+  const appStore = useStore(APP_STORE);
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    const checked = appStore.darkMode === ThemeEnum.LIGHT ? true : false;
+    setDarkMode(checked);
+  }, [appStore.darkMode]);
+
+  // 切换主题颜色
+  const toggleDarkMode = (checked: boolean) => {
+    const darkMode = checked ? ThemeEnum.LIGHT : ThemeEnum.DARK;
+    appStore.setDarkMode(darkMode);
+    setDarkMode(checked);
+    updateDarkThem(darkMode);
+  };
+
   return (
-    <div className="content">
+    <div className="root-content">
       {/* 顶部打字效果 */}
       <Typwriter
         pClassName={'typewriter'}
@@ -28,6 +47,8 @@ const Login: FC = () => {
             className="switch-is_dark"
             checkedChildren={<IconFont type={'icon-taiyang'} />}
             unCheckedChildren={<IconFont type={'icon-yueliang'} />}
+            onChange={toggleDarkMode}
+            checked={darkMode}
             defaultChecked
           />
 

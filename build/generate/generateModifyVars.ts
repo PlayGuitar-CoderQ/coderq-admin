@@ -1,5 +1,6 @@
 import { generateAntColors, primaryColor } from '../config/themeConfig';
 import { getThemeVariables } from 'antd/dist/theme';
+import { resolve } from 'path';
 
 export function generateModifyVars(dark = false) {
   const primaryColorObj: Record<string, string> = {};
@@ -14,6 +15,9 @@ export function generateModifyVars(dark = false) {
   return {
     ...modifyVars,
     ...primaryColorObj,
+    hack: `${modifyVars.hack} @import (reference) "${resolve(
+      'src/design/config.less',
+    )}";`,
     'primary-color': primary,
     'info-color': primary,
     'processing-color': primary,

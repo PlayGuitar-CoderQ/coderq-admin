@@ -3,9 +3,6 @@ import { createVitePlugin } from './build/vite/plugin';
 import { generateModifyVars } from './build/generate/generateModifyVars';
 import { resolve } from 'path';
 
-import { configThemePlugin } from './build/vite/plugin/theme';
-console.log('generateColors', configThemePlugin());
-
 function pathResolve(dir: string) {
   return resolve(process.cwd(), '.', dir);
 }
