@@ -25,6 +25,7 @@ export function getStorageShortName() {
   return `${getCommonStoragePrefix()}${`__${pkg.version}`}__`.toUpperCase();
 }
 
+// 获取不同环境模式的项目前缀名称 - xxxx_PRODUCTION
 export function getCommonStoragePrefix() {
   const { VITE_GLOB_APP_SHORT_NAME } = getAppEnvConfig();
   return `${VITE_GLOB_APP_SHORT_NAME}__${getEnv()}`.toUpperCase();

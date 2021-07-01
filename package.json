@@ -16,6 +16,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
     "antd": "^4.16.2",
+    "crypto-js": "^4.0.0",
     "history": "^5.0.0",
     "mobx": "^6.3.2",
     "mobx-react-lite": "^3.2.0",
@@ -29,6 +30,7 @@
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
     "@types/babel__core": "^7.1.14",
+    "@types/crypto-js": "^4.0.1",
     "@types/node": "^15.12.1",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
