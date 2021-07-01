@@ -1,7 +1,6 @@
 import { makeAutoObservable } from 'mobx';
 import { ThemeEnum } from '@/enums/appEnum';
 import { APP_DARK_MODE_KEY_ } from '@/enums/cachEnum';
-
 export const APP_STORE = 'appStore';
 
 export interface AppStore {
