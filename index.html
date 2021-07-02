@@ -17,7 +17,160 @@
         }
       })();
     </script>
-    <div id="root"></div>
+    <div id="root">
+      <style>
+         html[data-theme='dark'] .loader {
+          background-color: #1d212b;
+        }
+
+        html[data-theme='dark'] .loading-text {
+          color: #fff;
+        }
+
+
+        body {
+          margin: 0;
+        }
+
+        .loader {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 99999;
+        overflow: hidden;
+        background: #fff;
+    }
+
+    .loader-inner {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 90px;
+        left: 0;
+        width: 100px;
+        height: 60px;
+        margin: auto;
+    }
+
+    .loading-text {
+        position: absolute;
+        top: 120px;
+        right: 0;
+        bottom: 0;
+        left: 30px;
+        width: 150px;
+        height: 20px;
+        margin: auto;
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .loader-line-wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100px;
+        height: 50px;
+        overflow: hidden;
+        box-sizing: border-box;
+        animation: spin 2000ms cubic-bezier(.175, .885, .32, 1.275) infinite
+      ;
+        transform-origin: 50% 100%;
+    }
+
+    .loader-line {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        border: 4px solid transparent;
+        border-radius: 100%;
+        box-sizing: border-box;
+    }
+
+    .loader-line-wrap:nth-child(1) { animation-delay: -50ms; }
+
+    .loader-line-wrap:nth-child(2) { animation-delay: -100ms; }
+
+    .loader-line-wrap:nth-child(3) { animation-delay: -150ms; }
+
+    .loader-line-wrap:nth-child(4) { animation-delay: -200ms; }
+
+    .loader-line-wrap:nth-child(5) { animation-delay: -250ms; }
+
+    .loader-line-wrap:nth-child(1) .loader-line {
+        top: 7px;
+        width: 90px;
+        height: 90px;
+        border-color: hsl(0, 80%, 60%);
+    }
+
+    .loader-line-wrap:nth-child(2) .loader-line {
+        top: 14px;
+        width: 76px;
+        height: 76px;
+        border-color: hsl(60, 80%, 60%);
+    }
+
+    .loader-line-wrap:nth-child(3) .loader-line {
+        top: 21px;
+        width: 62px;
+        height: 62px;
+        border-color: hsl(120, 80%, 60%);
+    }
+
+    .loader-line-wrap:nth-child(4) .loader-line {
+        top: 28px;
+        width: 48px;
+        height: 48px;
+        border-color: hsl(180, 80%, 60%);
+    }
+
+    .loader-line-wrap:nth-child(5) .loader-line {
+        top: 35px;
+        width: 34px;
+        height: 34px;
+        border-color: hsl(240, 80%, 60%);
+    }
+
+    @keyframes spin {
+        0%, 15% {
+        transform: rotate(0);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+      </style>
+      <div class="loader">
+        <div class="loader-inner">
+          <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+          </div>
+          <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+          </div>
+          <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+          </div>
+          <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+          </div>
+          <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+          </div>
+        </div>
+        <div class="loading-text">
+          loadding ....
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
