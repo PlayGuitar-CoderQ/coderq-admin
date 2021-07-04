@@ -8,7 +8,7 @@ export interface AppStore {
   setDarkMode: (darkMode: ThemeEnum) => void;
 }
 const appStore = makeAutoObservable<AppStore>({
-  darkMode: localStorage.getItem(APP_DARK_MODE_KEY_) as ThemeEnum,
+  darkMode: (localStorage.getItem(APP_DARK_MODE_KEY_) as ThemeEnum) || 'light',
   setDarkMode(darkMode: ThemeEnum): void {
     this.darkMode = darkMode;
     localStorage.setItem(APP_DARK_MODE_KEY_, darkMode);
