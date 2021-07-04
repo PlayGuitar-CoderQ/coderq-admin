@@ -8,11 +8,10 @@ function pathResolve(dir: string) {
 }
 
 // https://vitejs.dev/config/
-export default ({ command, mode }: ConfigEnv): UserConfig => {
+export default ({ command }: ConfigEnv): UserConfig => {
   const isBuild = command === 'build';
-  console.log('viteConfig', isBuild, mode);
   return {
-    plugins: createVitePlugin(),
+    plugins: createVitePlugin(isBuild),
     resolve: {
       alias: [
         {

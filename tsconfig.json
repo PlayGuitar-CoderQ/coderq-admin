@@ -43,6 +43,7 @@
     "build/**/*.d.ts",
     "types/**/*.d.ts",
     "types/**/*.ts",
+    "mock/**/*.ts",
     "vite.config.ts"
   ],
   "exclude": [

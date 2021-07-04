@@ -15,11 +15,13 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
+    "@types/mockjs": "^1.0.3",
     "antd": "^4.16.2",
     "crypto-js": "^4.0.0",
     "history": "^5.0.0",
     "mobx": "^6.3.2",
     "mobx-react-lite": "^3.2.0",
+    "mockjs": "^1.1.0",
     "nanoid": "^3.1.23",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
@@ -56,6 +58,7 @@
     "ts-node": "^10.0.0",
     "typescript": "^4.3.2",
     "vite": "^2.3.4",
+    "vite-plugin-mock": "^2.8.0",
     "vite-plugin-style-import": "^1.0.1",
     "vite-plugin-theme": "^0.8.1"
   }
