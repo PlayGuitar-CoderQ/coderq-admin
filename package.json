@@ -17,6 +17,7 @@
     "@ant-design/icons": "^4.6.2",
     "@types/mockjs": "^1.0.3",
     "antd": "^4.16.2",
+    "axios": "^0.21.1",
     "crypto-js": "^4.0.0",
     "history": "^5.0.0",
     "mobx": "^6.3.2",
