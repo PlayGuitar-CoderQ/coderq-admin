@@ -9,8 +9,7 @@ const Dashboard: FC = observer(() => {
   });
 
   const testMock = async () => {
-    const data = await fetch('/login');
-    console.log(123, data);
+    console.log(123);
   };
   return (
     <div>

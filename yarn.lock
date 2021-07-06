@@ -558,6 +558,18 @@
   resolved "https://registry.nlark.com/@types/json-schema/download/@types/json-schema-7.0.7.tgz#98a993516c859eb0d5c4c8f098317a9ea68db9ad"
   integrity sha1-mKmTUWyFnrDVxMjwmDF6nqaNua0=
 
+"@types/lodash-es@^4.17.4":
+  version "4.17.4"
+  resolved "https://registry.yarnpkg.com/@types/lodash-es/-/lodash-es-4.17.4.tgz#b2e440d2bf8a93584a9fd798452ec497986c9b97"
+  integrity sha512-BBz79DCJbD2CVYZH67MBeHZRX++HF+5p8Mo5MzjZi64Wac39S3diedJYHZtScbRVf4DjZyN6LzA0SB0zy+HSSQ==
+  dependencies:
+    "@types/lodash" "*"
+
+"@types/lodash@*":
+  version "4.14.170"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.170.tgz#0d67711d4bf7f4ca5147e9091b847479b87925d6"
+  integrity sha512-bpcvu/MKHHeYX+qeEN8GE7DIravODWdACVA1ctevD8CN24RhPZIKMn9ntfAsrvLfSX3cR5RrBKAbYm9bGs0A+Q==
+
 "@types/mdast@^3.0.0":
   version "3.0.3"
   resolved "https://registry.nlark.com/@types/mdast/download/@types/mdast-3.0.3.tgz?cache=0&sync_timestamp=1621241868934&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fmdast%2Fdownload%2F%40types%2Fmdast-3.0.3.tgz#2d7d671b1cd1ea3deb306ea75036c2a0407d2deb"
@@ -609,6 +621,11 @@
   version "15.7.3"
   resolved "https://registry.nlark.com/@types/prop-types/download/@types/prop-types-15.7.3.tgz#2ab0d5da2e5815f94b0b9d4b95d1e5f243ab2ca7"
   integrity sha1-KrDV2i5YFflLC51LldHl8kOrLKc=
+
+"@types/qs@^6.9.6":
+  version "6.9.6"
+  resolved "https://registry.yarnpkg.com/@types/qs/-/qs-6.9.6.tgz#df9c3c8b31a247ec315e6996566be3171df4b3b1"
+  integrity sha512-0/HnwIfW4ki2D8L8c9GVcG5I72s9jP5GSLVF0VIXDW00kmIpA6O33G7a8n59Tmh7Nz0WUC3rSb7PTY/sdW2JzA==
 
 "@types/react-dom@^17.0.0":
   version "17.0.7"
@@ -2855,6 +2872,11 @@ locate-path@^6.0.0:
   integrity sha1-VTIeswn+u8WcSAHZMackUqaB0oY=
   dependencies:
     p-locate "^5.0.0"
+
+lodash-es@^4.17.21:
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
+  integrity sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==
 
 lodash.clonedeep@^4.5.0:
   version "4.5.0"
