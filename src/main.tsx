@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import * as Mock from './main';
 import { StoresProvider, stores } from '@/store';
 
 import '@/utils/console'; // console窗口打印个人标志

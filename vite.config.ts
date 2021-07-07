@@ -24,6 +24,10 @@ export default ({ command }: ConfigEnv): UserConfig => {
         },
       ],
     },
+    server: {
+      host: true,
+      port: 3001,
+    },
     css: {
       preprocessorOptions: {
         less: {

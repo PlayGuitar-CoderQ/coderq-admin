@@ -83,6 +83,13 @@ export class VAxios {
     };
   }
 
+  get<T = any>(
+    config: AxiosRequestConfig,
+    options?: RequestOptions,
+  ): Promise<T> {
+    return this.request({ ...config, method: 'GET' }, options);
+  }
+
   request<T = any>(
     config: AxiosRequestConfig,
     options?: RequestOptions,

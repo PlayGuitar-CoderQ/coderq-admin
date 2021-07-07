@@ -16,3 +16,13 @@ export enum RequestEnum {
   PUT = 'PUT',
   DELETE = 'DELETE',
 }
+
+/**
+ * @description 请求结果
+ */
+export enum ResultEnum {
+  SUCCESS = 0,
+  ERROR = 1,
+  TIMEOUT = 401,
+  TYPE = 'success',
+}

@@ -31,3 +31,8 @@ export function isFunction(val: unknown): val is Function {
 export function isObject(val: any): val is Record<any, any> {
   return val !== null && is(val, 'Obejct');
 }
+
+// 是否是字符串
+export function isString(val: unknown): val is string {
+  return is(val, 'String');
+}
