@@ -38,10 +38,17 @@ export function getAppEnvConfig() {
     ? (import.meta.env as unknown as GlobEnvConfg)
     : window[ENV_NAME as any]) as unknown as GlobEnvConfg;
 
-  const { VITE_GLOB_APP_SHORT_NAME, VITE_GLOB_APP_TITLE } = ENV;
+  const {
+    VITE_GLOB_APP_SHORT_NAME,
+    VITE_GLOB_APP_TITLE,
+    VITE_GLOB_API_URL_PREFIX,
+    VITE_GLOB_API_URL,
+  } = ENV;
 
   return {
     VITE_GLOB_APP_SHORT_NAME,
     VITE_GLOB_APP_TITLE,
+    VITE_GLOB_API_URL_PREFIX,
+    VITE_GLOB_API_URL,
   };
 }

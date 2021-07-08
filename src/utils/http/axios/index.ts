@@ -8,6 +8,9 @@ import { deepMerge } from '@/utils';
 import { setObjToUrlParams } from '@/utils';
 import { Result, RequestOptions } from '#/axios';
 import { isString } from '@/utils/is';
+import { useGlobSetting } from '@/hooks/setting';
+const globSetting = useGlobSetting();
+const urlPrefix = globSetting.urlPrefix;
 
 const transform: AxiosTransform = {
   /**
@@ -65,6 +68,7 @@ const transform: AxiosTransform = {
    * @description 请求之前处理config
    */
   beforeRequestHook: (config, options) => {
+    debugger;
     const {
       apiUrl,
       joinPrefix,
@@ -74,7 +78,7 @@ const transform: AxiosTransform = {
     } = options;
 
     if (joinPrefix) {
-      config.url = `coderqJava${config.url}`;
+      config.url = `${urlPrefix}${config.url}`;
     }
 
     if (apiUrl && isString(apiUrl)) {
@@ -142,7 +146,7 @@ function createAxios(opt?: Partial<CreateAxiosOptions>) {
       {
         authenticationScheme: '',
         timeout: 10 * 1000,
-        urlPrefix: 'coderqJava',
+        urlPrefix: urlPrefix,
         headers: { 'Content-Type': ContentTypeEnum.JSON },
         // 数据处理方式
         transform,
@@ -161,7 +165,7 @@ function createAxios(opt?: Partial<CreateAxiosOptions>) {
           // 消息提示类型
           errorMessageMode: 'message',
           // 接口地址
-          apiUrl: '/basic-api',
+          apiUrl: globSetting.apiUrl,
           //  是否加入时间戳
           joinTime: true,
           // 忽略重复请求
