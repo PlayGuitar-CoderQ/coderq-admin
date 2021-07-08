@@ -23,5 +23,6 @@ export const useGlobSetting = (): Readonly<GlobConfig> => {
     urlPrefix: VITE_GLOB_API_URL_PREFIX,
     apiUrl: VITE_GLOB_API_URL,
   };
+  console.log('glob', glob);
   return glob as Readonly<GlobConfig>;
 };

@@ -11,6 +11,7 @@ import { isString } from '@/utils/is';
 import { useGlobSetting } from '@/hooks/setting';
 const globSetting = useGlobSetting();
 const urlPrefix = globSetting.urlPrefix;
+console.log('urlPrefix', urlPrefix);
 
 const transform: AxiosTransform = {
   /**
@@ -68,7 +69,6 @@ const transform: AxiosTransform = {
    * @description 请求之前处理config
    */
   beforeRequestHook: (config, options) => {
-    debugger;
     const {
       apiUrl,
       joinPrefix,
