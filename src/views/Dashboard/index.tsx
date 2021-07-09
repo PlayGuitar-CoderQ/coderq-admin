@@ -1,15 +1,11 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
 import { Button } from 'antd';
 import { observer } from 'mobx-react-lite';
-import { getEnv } from '@/utils/env';
 import { useNavigate } from 'react-router-dom';
 import { loginApi } from '@/api/user';
 
 const Dashboard: FC = observer(() => {
   const navigate = useNavigate();
-  useEffect(() => {
-    console.log('env', getEnv());
-  });
 
   const testMock = async () => {
     const res = await loginApi();

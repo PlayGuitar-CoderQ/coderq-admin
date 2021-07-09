@@ -11,7 +11,6 @@ import { isString } from '@/utils/is';
 import { useGlobSetting } from '@/hooks/setting';
 const globSetting = useGlobSetting();
 const urlPrefix = globSetting.urlPrefix;
-console.log('urlPrefix', urlPrefix);
 
 const transform: AxiosTransform = {
   /**
