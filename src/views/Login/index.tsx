@@ -20,7 +20,6 @@ const Login: FC = () => {
   useEffect(() => {
     const checked = appStore.darkMode === ThemeEnum.LIGHT ? true : false;
     setDarkMode(checked);
-    console.log(checked);
   }, []);
 
   // 切换主题颜色
