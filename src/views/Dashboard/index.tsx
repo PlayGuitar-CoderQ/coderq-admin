@@ -2,8 +2,8 @@ import React, { FC, useState } from 'react';
 import { Button } from 'antd';
 import { observer } from 'mobx-react-lite';
 import { useNavigate } from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group';
 import { loginApi } from '@/api/user';
-import { Animated } from 'react-animated-css';
 import './index.less';
 
 const Dashboard: FC = observer(() => {
@@ -23,15 +23,21 @@ const Dashboard: FC = observer(() => {
       <Button onClick={() => testMock()}>测试</Button>
       <Button onClick={() => onBackLogin()}>返回登陆</Button>
       <Button onClick={() => setShow(!show)}>测试动画</Button>
-      {show && (
-        <Animated
-          animationIn="fadeInDown"
-          animationOut="bounceOut"
-          isVisible={true}
+      <div className="content">
+        <CSSTransition
+          in={show}
+          timeout={800}
+          classNames={{
+            enter: 'animate__animated',
+            enterActive: 'animate__backInLeft',
+            exit: 'animate__animated',
+            exitActive: 'animate__backOutDown',
+          }}
+          unmountOnExit
         >
-          <Button className="test">我是动画</Button>
-        </Animated>
-      )}
+          <h1>我是好</h1>
+        </CSSTransition>
+      </div>
     </div>
   );
 });
