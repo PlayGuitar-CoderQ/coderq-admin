@@ -10,7 +10,6 @@ function pathResolve(dir: string) {
   return resolve(process.cwd(), '.', dir);
 }
 
-// https://vitejs.dev/config/
 export default ({ command, mode }: ConfigEnv): UserConfig => {
   const root = process.cwd();
   const env = loadEnv(mode, root);
