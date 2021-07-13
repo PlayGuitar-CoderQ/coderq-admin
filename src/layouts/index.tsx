@@ -1,27 +1,25 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import './index.less';
 import { Layout, Menu } from 'antd';
+import { observer } from 'mobx-react-lite';
 import {
   UserOutlined,
   VideoCameraOutlined,
   UploadOutlined,
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
 } from '@ant-design/icons';
-const { Header, Sider, Content } = Layout;
+import { useStore } from '@/hooks/setting';
+import { APP_STORE } from '@/store/model/appStore';
+import HeaderComponent from '@/layouts/Header';
+const { Sider, Content } = Layout;
 
-const LayoutPage: FC = () => {
-  const [collapsed, setCollapsed] = useState(false);
-
-  const toggle = () => {
-    setCollapsed(!collapsed);
-  };
+const LayoutPage: FC = observer(() => {
+  const appStore = useStore(APP_STORE);
   return (
     <Layout className="layout-page">
       <Sider
         trigger={null}
         collapsible
-        collapsed={collapsed}
+        collapsed={appStore.collapsed}
         style={{ height: '100vh' }}
       >
         <div className="logo" />
@@ -39,15 +37,7 @@ const LayoutPage: FC = () => {
       </Sider>
 
       <Layout>
-        <Header style={{ padding: 0 }}>
-          {React.createElement(
-            collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
-            {
-              className: 'trigger',
-              onClick: toggle,
-            },
-          )}
-        </Header>
+        <HeaderComponent />
         <Content
           style={{
             margin: '24px 16px',
@@ -60,6 +50,6 @@ const LayoutPage: FC = () => {
       </Layout>
     </Layout>
   );
-};
+});
 
 export default LayoutPage;
