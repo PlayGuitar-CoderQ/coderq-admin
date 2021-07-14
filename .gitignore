@@ -4,6 +4,5 @@ dist
 dist-ssr
 *.local
 .idea
-*.md
 /bin
 *.sh
