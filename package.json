@@ -1,11 +1,12 @@
 {
   "name": "vite2-react-mall",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "scripts": {
     "start": "vite",
     "build": "tsc --noEmit && vite build",
     "log": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "release": "standard-version",
     "serve": "vite preview",
     "install:husky": "husky install",
     "lint:pretty": "pretty-quick --staged",
