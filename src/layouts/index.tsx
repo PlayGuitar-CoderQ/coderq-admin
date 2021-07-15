@@ -4,7 +4,7 @@ import { Layout } from 'antd';
 
 import HeaderComponent from './Header';
 import MenuComponent from './Menu';
-const { Content } = Layout;
+import ContentComponent from './Contents';
 
 const LayoutPage: FC = () => {
   return (
@@ -12,15 +12,7 @@ const LayoutPage: FC = () => {
       <MenuComponent />
       <Layout>
         <HeaderComponent />
-        <Content
-          style={{
-            margin: '24px 16px',
-            padding: 24,
-            minHeight: 280,
-          }}
-        >
-          content
-        </Content>
+        <ContentComponent />
       </Layout>
     </Layout>
   );
