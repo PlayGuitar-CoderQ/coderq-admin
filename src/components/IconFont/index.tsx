@@ -5,9 +5,11 @@ import { Prop } from './prop';
 
 const Icon: FC<Prop> = (props: Prop) => {
   const IconFont = createFromIconfontCN({
-    scriptUrl: IconFontUrl as unknown as string,
+    scriptUrl: IconFontUrl.ICONURL,
   });
-  return <IconFont type={props.type} style={props.style} />;
+  return (
+    <IconFont type={props.type} style={props.style} onClick={props.onClick} />
+  );
 };
 
 export default Icon;

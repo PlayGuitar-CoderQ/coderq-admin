@@ -7,7 +7,7 @@ import LoginPage from '@/views/Login';
 
 export const LoginRoute: PartialRouteObject[] = [
   {
-    path: 'loginPage',
+    path: 'login',
     element: <Route element={<LoginPage />} />,
   },
 ];

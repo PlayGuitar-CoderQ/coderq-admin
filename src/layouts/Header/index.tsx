@@ -1,30 +1,33 @@
 import React from 'react';
 import type { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './index.less';
+
 import { observer } from 'mobx-react-lite';
 
-import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 import { Layout } from 'antd';
+import CollasedIcon from './components/CollapsedIcon';
+import IconFont from '@/components/IconFont';
+
 const { Header } = Layout;
 
-import { useStore } from '@/hooks/setting';
-import { APP_STORE } from '@/store/model/appStore';
-
 const HeaderComponents: FC = observer(() => {
-  const appStore = useStore(APP_STORE);
+  const navigate = useNavigate();
 
-  const onSetCollapsed = () => {
-    appStore.setCollapsed(!appStore.collapsed);
-    console.log('appStore.collapsed', appStore.collapsed);
+  const loginOut = () => {
+    console.log('213');
+    navigate({ pathname: '/login' });
   };
   return (
-    <Header style={{ paddingLeft: '20px', background: '#fff' }}>
-      {React.createElement(
-        appStore.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
-        {
-          className: 'trigger',
-          onClick: onSetCollapsed,
-        },
-      )}
+    <Header style={{ padding: '0 0 0 15px', background: '#fff' }}>
+      <div className="f_b header-content">
+        <CollasedIcon />
+        <IconFont
+          onClick={() => loginOut()}
+          type={'icon-tuichu'}
+          style={{ fontSize: '40px', cursor: 'pointer' }}
+        />
+      </div>
     </Header>
   );
 });
