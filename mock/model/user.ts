@@ -9,9 +9,10 @@ export default [
     response: () => {
       return resultSuccess({
         username: 'coderqadmin',
-        password: '123456',
-        sex: 0,
+        realname: '弹吉他的CoderQ',
+        abatar: 'https://urlify.cn/ueY3ia',
         auth: 'admin',
+        token: 'SADAS23131454kjnkjnkjn34kj2n4kjn32k',
       });
     },
   },
