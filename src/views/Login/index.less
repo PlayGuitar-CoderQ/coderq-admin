@@ -1,64 +1,65 @@
 // 暗黑主题下的样式
-html[data-theme='dark'] {
-  .root-content {
-    background-color: #096dd9;
+// html[data-theme='dark'] {
+//   .root-content {
+//     background-color: #096dd9;
 
-    &::after {
-      background-color: #1d212b;
-    }
+//     &::after {
+//       background-color: #1d212b;
+//     }
 
-    .login-content {
-      .login-form-main {
-        background-color: #151823;
-      }
-    }
-  }
-}
+//     .login-content {
+//       .login-form-main {
+//         background-color: #151823;
+//       }
+//     }
+//   }
+// }
 
 .root-content {
   // 波浪效果
-  @keyframes rotate {
-    from {
-      transform: translateX(-50%) rotateZ(0deg);
-    }
+  // @keyframes rotate {
+  //   from {
+  //     transform: translateX(-50%) rotateZ(0deg);
+  //   }
 
-    to {
-      transform: translateX(-50%) rotateZ(360deg);
-    }
-  }
-
-  position: relative;
+  //   to {
+  //     transform: translateX(-50%) rotateZ(360deg);
+  //   }
+  // }
   height: 100vh;
-  overflow: hidden;
-  background-color: #40a9ff;
+  background-attachment: fixed;
+  background-image: url("../../assets/Page/login_bkg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
-  &::before,
-  &::after {
-    position: absolute;
-    content: '';
-    bottom: 55%;
-    left: 50%;
-    width: 200%;
-    height: 350%;
-    background-color: #fff;
-    border-radius: 45%;
-    transform: translateX(-50%); // 居中
-    animation: rotate 15s linear infinite;
-  }
+  // &::before,
+  // &::after {
+  //   position: absolute;
+  //   content: '';
+  //   bottom: 55%;
+  //   left: 50%;
+  //   width: 200%;
+  //   height: 350%;
+  //   background-color: #fff;
+  //   border-radius: 45%;
+  //   transform: translateX(-50%); // 居中
+  //   animation: rotate 15s linear infinite;
+  // }
 
-  &::before {
-    bottom: 50%;
-    border-radius: 47%;
-    opacity: 0.5;
-  }
+  // &::before {
+  //   bottom: 50%;
+  //   border-radius: 47%;
+  //   opacity: 0.5;
+  // }
 
   // 切换黑暗主题开关
-  .switch-is_dark {
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    z-index: 99;
-  }
+  // .switch-is_dark {
+  //   position: absolute;
+  //   top: 8px;
+  //   left: 8px;
+  //   z-index: 99;
+  // }
 
   // 打字效果
   // .typewriter {
@@ -76,79 +77,79 @@ html[data-theme='dark'] {
   // }
 
   // 登录内容
-  .login-content {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    z-index: 99;
-    transform: translate(-175px, -200px);
+  // .login-content {
+  //   position: fixed;
+  //   top: 50%;
+  //   left: 50%;
+  //   z-index: 99;
+  //   transform: translate(-175px, -200px);
 
-    .back_light(@y, @spread, @colorA, @colorB, @duration) {
-      @keyframes animateGlow {
-        0% {
-          background-position: 0% 50%;
-        }
+  //   .back_light(@y, @spread, @colorA, @colorB, @duration) {
+  //     @keyframes animateGlow {
+  //       0% {
+  //         background-position: 0% 50%;
+  //       }
 
-        50% {
-          background-position: 100% 50%;
-        }
+  //       50% {
+  //         background-position: 100% 50%;
+  //       }
 
-        100% {
-          background-position: 0% 50%;
-        }
-      }
+  //       100% {
+  //         background-position: 0% 50%;
+  //       }
+  //     }
 
-      &::after {
-        position: absolute;
-        content: '';
-        top: @y;
-        right: 0;
-        left: 0;
-        z-index: -1;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(270deg, @colorA, @colorB);
-        background-size: 200% 200%;
-        filter: blur(@spread);
-        animation: animateGlow 3s ease infinite;
-      }
-    }
+  //     &::after {
+  //       position: absolute;
+  //       content: '';
+  //       top: @y;
+  //       right: 0;
+  //       left: 0;
+  //       z-index: -1;
+  //       width: 100%;
+  //       height: 100%;
+  //       background: linear-gradient(270deg, @colorA, @colorB);
+  //       background-size: 200% 200%;
+  //       filter: blur(@spread);
+  //       animation: animateGlow 3s ease infinite;
+  //     }
+  //   }
 
-    .login-form-main {
-      position: relative;
-      width: 350px;
-      height: 400px;
-      min-width: 300px;
-      background-color: #fff;
-      border-radius: 20px;
-      animation: textColor 10s ease infinite;
-      .back_light(20px, 1.9vw,#0fffc1, #6600ff, 10s);
+  //   .login-form-main {
+  //     position: relative;
+  //     width: 350px;
+  //     height: 400px;
+  //     min-width: 300px;
+  //     background-color: #fff;
+  //     border-radius: 20px;
+  //     animation: textColor 10s ease infinite;
+  //     .back_light(20px, 1.9vw,#0fffc1, #6600ff, 10s);
 
-      .login-avatar {
-        position: relative;
-        top: 30px;
-        left: 50%;
-        z-index: 1;
-        width: 100px;
-        height: 100px;
-        margin-left: -50px;
-        background-size: contain;
-        border-radius: 50%;
+  //     .login-avatar {
+  //       position: relative;
+  //       top: 30px;
+  //       left: 50%;
+  //       z-index: 1;
+  //       width: 100px;
+  //       height: 100px;
+  //       margin-left: -50px;
+  //       background-size: contain;
+  //       border-radius: 50%;
 
-        &:hover {
-          transform: rotate(666turn);
-          transition: all 59s cubic-bezier(0.34, 0, 0.84, 1) 0.2s;
-        }
-      }
+  //       &:hover {
+  //         transform: rotate(666turn);
+  //         transition: all 59s cubic-bezier(0.34, 0, 0.84, 1) 0.2s;
+  //       }
+  //     }
 
-      .form-main {
-        position: relative;
-        top: 80px;
-        z-index: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  }
+  //     .form-main {
+  //       position: relative;
+  //       top: 80px;
+  //       z-index: 1;
+  //       display: flex;
+  //       flex-direction: column;
+  //       align-items: center;
+  //     }
+  //   }
+  // }
 }
