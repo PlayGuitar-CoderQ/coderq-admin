@@ -11,23 +11,33 @@ import { ThemeEnum } from '@/enums/appEnum';
 import { useStore } from '@/hooks/setting';
 import { APP_STORE } from '@/store/model/appStore';
 import { updateDarkThem } from '@/logic/theme/dark';
+import { observer } from 'mobx-react-lite';
 // import unUserImg from '@/assets/Page/un_user.jpg';
 import './index.less';
 
-const Login: FC = () => {
+const Login: FC = observer(() => {
   const appStore = useStore(APP_STORE);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   // const [isTransition, setIsTransition] = useState(false);
 
   useEffect(() => {
     const checked = appStore.darkMode === ThemeEnum.LIGHT ? true : false;
     setDarkMode(checked);
+    console.log(
+      'appStore.darkMode',
+      checked,
+      appStore.darkMode,
+      ThemeEnum.LIGHT,
+      darkMode,
+    );
     // setIsTransition(true);
-  }, []);
+  }, [darkMode]);
 
   // 切换主题颜色
   const toggleDarkMode = (checked: boolean) => {
     const darkMode = checked ? ThemeEnum.LIGHT : ThemeEnum.DARK;
+
+    console.log(darkMode);
     appStore.setDarkMode(darkMode);
     setDarkMode(checked);
     updateDarkThem(darkMode);
@@ -56,13 +66,14 @@ const Login: FC = () => {
       </div>
       <div className="status-box">
         <Switch
-          onChange={() => toggleDarkMode}
-          checkedChildren={<IconFont type="icon-yueliang" />}
-          unCheckedChildren={<IconFont type="icon-taiyang" />}
+          onChange={(e) => toggleDarkMode(e)}
+          defaultChecked={darkMode}
+          checkedChildren={<IconFont type="icon-taiyang" />}
+          unCheckedChildren={<IconFont type="icon-yueliang" />}
         />
       </div>
     </div>
   );
-};
+});
 
 export default Login;
