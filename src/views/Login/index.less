@@ -1,24 +1,40 @@
 // 暗黑主题下的样式
-// html[data-theme='dark'] {
-//   .root-content {
-//     background-color: #096dd9;
+html[data-theme='dark'] {
+  .root-content {
+    background-color: #131419;
 
-//     &::after {
-//       background-color: #1d212b;
-//     }
+    .login-content {
+      background-color: #131419;
+      box-shadow: -5px -5px 10px rgba(255,255,255,.05),
+                  5px 5px 15px rgba(0,0,0,.5);
 
-//     .login-content {
-//       .login-form-main {
-//         background-color: #151823;
-//       }
-//     }
-//   }
-// }
+      .login-form {
+        .input-box {
+          input {
+            background-color: #131419;
+            box-shadow: inset -2px -2px 6px rgba(255,255,255,.1),
+                        inset 2px 2px 6px rgba(0,0,0,.8);
+          }
+
+          input[type="submit"] {
+            box-shadow: -2px -2px 6px rgba(255,255,255,.1),
+                        2px 2px 6px rgba(0,0,0,.8);
+          }
+
+          input[type="submit"]:active {
+            box-shadow: inset -2px -2px 6px rgba(255,255,255,.1),
+                        inset 2px 2px 6px rgba(0,0,0,.8);
+
+          }
+        }
+      }
+    }
+  }
+}
 
 .root-content {
   height: 100vh;
   background-attachment: fixed;
-  // background-color: #131419;
   background-color: #E4EBF5;
   background-image: url("../../assets//Page/_login_bkg.png");
   background-position: top;
@@ -33,12 +49,8 @@
     width: 400px;
     height: 500px;
     padding: 40px 40px 60px;
-    // background-color: #131419;
     border-radius: 20px;
     transform: translateY(-50%);
-    // box-shadow: -5px -5px 10px rgba(255,255,255,.05),
-    //           5px 5px 15px rgba(0,0,0,.5);
-
     box-shadow: .8rem .8rem 1.4rem #c8d0e7,
                 -.2rem -.2rem 1.8rem #FFF;
     flex-direction: column;
@@ -61,29 +73,19 @@
           font-size: 18px;
           color: #03a9f4;
           background: none;
-          // background-color: #131419;
           border: 0;
           border-radius: 40px;
           outline: none;
-          // box-shadow: inset -2px -2px 6px rgba(255,255,255,.1),
-          //             inset 2px 2px 6px rgba(0,0,0,.8);
-
           box-shadow: inset 0.2rem 0.2rem 0.5rem #c8d0e7,
                       inset -0.2rem -0.2rem 0.5rem #FFF;
         }
 
         input[type="submit"] {
-          // box-shadow: -2px -2px 6px rgba(255,255,255,.1),
-          //             2px 2px 6px rgba(0,0,0,.8);
-
           box-shadow: .3rem .3rem .6rem #c8d0e7,
                       -.2rem -.2rem .5rem #FFF;
         }
 
         input[type="submit"]:active {
-          // box-shadow: inset -2px -2px 6px rgba(255,255,255,.1),
-          //             inset 2px 2px 6px rgba(0,0,0,.8);
-
           box-shadow: inset .2rem .2rem .5rem #c8d0e7,
                       inset -.2rem -.2rem .5rem #FFF;
         }

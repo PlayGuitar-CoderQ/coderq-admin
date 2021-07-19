@@ -1,21 +1,19 @@
 import React, { FC, useEffect, useState } from 'react';
 
 import { Switch } from 'antd';
-// import { ReconciliationOutlined } from '@ant-design/icons';
-// import { UserOutlined } from '@ant-design/icons';
 import IconFont from '@/components/IconFont';
-// import Typwriter from '@/components/Typewriter';
-// import { CSSTransition } from 'react-transition-group';
+import NenoFont from '@/components/NenoFont';
 
-import { ThemeEnum } from '@/enums/appEnum';
+import { observer } from 'mobx-react-lite';
+import { ThemeEnum, NenoFontEnum } from '@/enums/appEnum';
 import { useStore } from '@/hooks/setting';
 import { APP_STORE } from '@/store/model/appStore';
 import { updateDarkThem } from '@/logic/theme/dark';
-import { observer } from 'mobx-react-lite';
-// import unUserImg from '@/assets/Page/un_user.jpg';
+import { getAppEnvConfig } from '@/utils/env';
 import './index.less';
 
 const Login: FC = observer(() => {
+  const { VITE_GLOB_APP_TITLE } = getAppEnvConfig();
   const appStore = useStore(APP_STORE);
   const [darkMode, setDarkMode] = useState(true);
   // const [isTransition, setIsTransition] = useState(false);
@@ -31,7 +29,7 @@ const Login: FC = observer(() => {
       darkMode,
     );
     // setIsTransition(true);
-  }, [darkMode]);
+  }, []);
 
   // 切换主题颜色
   const toggleDarkMode = (checked: boolean) => {
@@ -46,6 +44,14 @@ const Login: FC = observer(() => {
   return (
     <div className="root-content">
       <div className="login-content">
+        <div className="f_c">
+          <NenoFont
+            content={VITE_GLOB_APP_TITLE}
+            color={NenoFontEnum.COLOR}
+            size={NenoFontEnum.SIZE}
+          />
+        </div>
+
         <div className="login-form">
           <div className="input-box">
             <label htmlFor="username">用户账号</label>
@@ -67,7 +73,7 @@ const Login: FC = observer(() => {
       <div className="status-box">
         <Switch
           onChange={(e) => toggleDarkMode(e)}
-          defaultChecked={darkMode}
+          checked={darkMode}
           checkedChildren={<IconFont type="icon-taiyang" />}
           unCheckedChildren={<IconFont type="icon-yueliang" />}
         />

@@ -1,0 +1,125 @@
+@nenoname_red: nenored;
+@nenoname_blue: nenoblue;
+@nenoname_yellow: nenoyellow;
+@nenoname_green: nenogreen;
+@nenoname_orange: nenoorange;
+@nenoname_purple: nenopurple;
+
+@blueColor: #228dff;
+@redColor: #F17;
+@yellowColor: #ffdd1b;
+@greenColor: #b6ff00;
+@orangeColor: #ff9900;
+@purpleColor: #ba01ff;
+
+
+
+// 字体大小
+.neno-small {
+  font-size: 24px;
+}
+
+.neno-mini {
+  font-size: 16px;
+}
+
+.neno-big {
+  font-size: 36px;
+}
+
+
+// 霓虹效果
+.keyframesFunction (@name, @color: "#228dff") {
+  @keyframes @name {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px @color,
+        0 0 70px @color, 0 0 80px @color, 0 0 100px @color, 0 0 150px @color;
+    }
+
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px @color,
+        0 0 35px @color, 0 0 40px @color, 0 0 50px @color, 0 0 75px @color;
+    }
+  }
+}
+
+
+
+// 效果选项
+.neno-blue {
+  font-family: Iceland;
+  color: #228dff;
+
+  &:hover {
+    .keyframesFunction(@nenoname_blue, @blueColor);
+
+    color: #FFF;
+    -webkit-animation: @nenoname_blue 1.5s ease-in-out infinite alternate;
+    animation: @nenoname_blue 1.5s ease-in-out infinite alternate;
+  }
+}
+
+.neno-red {
+  font-family: Monoton;
+  color: @redColor;
+
+  &:hover {
+    .keyframesFunction(@nenoname_red, @redColor);
+
+    color: #FFF;
+    -webkit-animation: @nenoname_red 1.5s ease-in-out infinite alternate;
+    animation: @nenoname_red 1.5s ease-in-out infinite alternate;
+  }
+}
+
+.neno-yellow {
+  font-family: Pacifico;
+  color: @yellowColor;
+
+  &:hover {
+    .keyframesFunction(@nenoname_yellow, @yellowColor);
+
+    color: #FFF;
+    -webkit-animation: @nenoname_yellow 1.5s ease-in-out infinite alternate;
+    animation: @nenoname_yellow 1.5s ease-in-out infinite alternate;
+  }
+}
+
+.neno-green {
+  font-family: "Press Start 2P";
+  color: @greenColor;
+
+  &:hover {
+    .keyframesFunction(@nenoname_green, @greenColor);
+
+    color: #FFF;
+    -webkit-animation: @nenoname_green 1.5s ease-in-out infinite alternate;
+    animation: @nenoname_green 1.5s ease-in-out infinite alternate;
+  }
+}
+
+.neno-orange {
+  font-family: Audiowide;
+  color: @orangeColor;
+
+  &:hover {
+    .keyframesFunction(@nenoname_orange, @orangeColor);
+
+    color: #FFF;
+    -webkit-animation: @nenoname_orange 1.5s ease-in-out infinite alternate;
+    animation: @nenoname_orange 1.5s ease-in-out infinite alternate;
+  }
+}
+
+.neno-purple {
+  font-family: Audiowide;
+  color: @purpleColor;
+
+  &:hover {
+    .keyframesFunction(@nenoname_purple, @purpleColor);
+
+    color: #FFF;
+    -webkit-animation: @nenoname_purple 1.5s ease-in-out infinite alternate;
+    animation: @nenoname_purple 1.5s ease-in-out infinite alternate;
+  }
+}

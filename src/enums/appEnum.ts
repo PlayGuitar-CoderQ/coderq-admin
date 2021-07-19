@@ -11,3 +11,8 @@ export enum TypeWriterTextEnum {
 export enum IconFontUrl {
   ICONURL = '//at.alicdn.com/t/font_2622053_weo5l7kgqc.js',
 }
+
+export enum NenoFontEnum {
+  COLOR = 'yellow',
+  SIZE = 'small',
+}
