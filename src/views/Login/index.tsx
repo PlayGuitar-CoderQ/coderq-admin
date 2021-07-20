@@ -33,11 +33,16 @@ const Login: FC = observer(() => {
   }, []);
 
   // 切换主题颜色
-  const toggleDarkMode = (checked: boolean) => {
+  const onToggleDarkMode = (checked: boolean) => {
     const darkMode = checked ? ThemeEnum.LIGHT : ThemeEnum.DARK;
     appStore.setDarkMode(darkMode);
     setDarkMode(checked);
     updateDarkThem(darkMode);
+  };
+
+  // 登陆系统
+  const onLogin = () => {
+    appStore.setWaitNotificationAppLogin();
   };
 
   return (
@@ -65,14 +70,19 @@ const Login: FC = observer(() => {
             />
           </div>
           <div className="input-box">
-            <input type="submit" name="submit" value="登入" />
+            <input
+              type="submit"
+              name="submit"
+              value="登入"
+              onClick={() => onLogin()}
+            />
           </div>
           <AuthoLoginIcons />
         </div>
       </div>
       <div className="status-box">
         <Switch
-          onChange={(e) => toggleDarkMode(e)}
+          onChange={(e) => onToggleDarkMode(e)}
           checked={darkMode}
           checkedChildren={<IconFont type="icon-taiyang" />}
           unCheckedChildren={<IconFont type="icon-yueliang" />}
