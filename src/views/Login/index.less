@@ -32,72 +32,147 @@ html[data-theme='dark'] {
   }
 }
 
-.root-content {
-  height: 100vh;
-  background-attachment: fixed;
-  background-color: #E4EBF5;
-  background-image: url("../../assets//Page/_login_bkg.png");
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
+// 媒体查询
+@media screen and (max-width: 1600px) {
+  .root-content {
+    height: 100vh;
+    background-attachment: fixed;
+    background-color: #E4EBF5;
+    background-image: none;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
 
-  .login-content {
-    position: fixed;
-    top: 50%;
-    left: 5%;
-    display: flex;
-    width: 400px;
-    height: 500px;
-    padding: 40px 40px 60px;
-    border-radius: 20px;
-    transform: translateY(-50%);
-    box-shadow: .8rem .8rem 1.4rem #c8d0e7,
-                -.2rem -.2rem 1.8rem #FFF;
-    flex-direction: column;
+    .login-content {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      display: flex;
+      width: 400px;
+      height: 500px;
+      padding: 40px 40px 60px;
+      border-radius: 20px;
+      transform: translate(-50%, -50%);
+      box-shadow: .8rem .8rem 1.4rem #c8d0e7,
+                  -.2rem -.2rem 1.8rem #FFF;
+      flex-direction: column;
 
-    .login-form {
-      .input-box {
-        margin-top: 40px;
+      .login-form {
+        .input-box {
+          margin-top: 40px;
 
-        label {
-          display: block;
-          margin-bottom: 5px;
-          font-size: 18px;
-          color: #868686;
-        }
+          label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 18px;
+            color: #868686;
+          }
 
-        input {
-          width: 100%;
-          height: 50px;
-          padding: 5px 15px;
-          font-size: 18px;
-          color: #03a9f4;
-          background: none;
-          border: 0;
-          border-radius: 40px;
-          outline: none;
-          box-shadow: inset 0.2rem 0.2rem 0.5rem #c8d0e7,
-                      inset -0.2rem -0.2rem 0.5rem #FFF;
-        }
+          input {
+            width: 100%;
+            height: 50px;
+            padding: 5px 15px;
+            font-size: 18px;
+            color: #03a9f4;
+            background: none;
+            border: 0;
+            border-radius: 40px;
+            outline: none;
+            box-shadow: inset 0.2rem 0.2rem 0.5rem #c8d0e7,
+                        inset -0.2rem -0.2rem 0.5rem #FFF;
+          }
 
-        input[type="submit"] {
-          box-shadow: .3rem .3rem .6rem #c8d0e7,
-                      -.2rem -.2rem .5rem #FFF;
-        }
+          input[type="submit"] {
+            box-shadow: .3rem .3rem .6rem #c8d0e7,
+                        -.2rem -.2rem .5rem #FFF;
+          }
 
-        input[type="submit"]:active {
-          box-shadow: inset .2rem .2rem .5rem #c8d0e7,
-                      inset -.2rem -.2rem .5rem #FFF;
+          input[type="submit"]:active {
+            box-shadow: inset .2rem .2rem .5rem #c8d0e7,
+                        inset -.2rem -.2rem .5rem #FFF;
+          }
         }
       }
     }
-  }
 
-  .status-box {
-    position: fixed;
-    right: 0;
-    display: flex;
-    align-items: center;
-    height: 50px;
+    .status-box {
+      position: fixed;
+      right: 0;
+      display: flex;
+      align-items: center;
+      height: 50px;
+    }
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .root-content {
+    height: 100vh;
+    background-attachment: fixed;
+    background-color: #E4EBF5;
+    background-image: url("../../assets//Page/_login_bkg.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .login-content {
+      position: fixed;
+      top: 50%;
+      left: 5%;
+      display: flex;
+      width: 400px;
+      height: 500px;
+      padding: 40px 40px 60px;
+      border-radius: 20px;
+      transform: translateY(-50%);
+      box-shadow: .8rem .8rem 1.4rem #c8d0e7,
+                  -.2rem -.2rem 1.8rem #FFF;
+      flex-direction: column;
+
+      .login-form {
+        .input-box {
+          margin-top: 40px;
+
+          label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 18px;
+            color: #868686;
+          }
+
+          input {
+            width: 100%;
+            height: 50px;
+            padding: 5px 15px;
+            font-size: 18px;
+            color: #03a9f4;
+            background: none;
+            border: 0;
+            border-radius: 40px;
+            outline: none;
+            box-shadow: inset 0.2rem 0.2rem 0.5rem #c8d0e7,
+                        inset -0.2rem -0.2rem 0.5rem #FFF;
+          }
+
+          input[type="submit"] {
+            box-shadow: .3rem .3rem .6rem #c8d0e7,
+                        -.2rem -.2rem .5rem #FFF;
+          }
+
+          input[type="submit"]:active {
+            box-shadow: inset .2rem .2rem .5rem #c8d0e7,
+                        inset -.2rem -.2rem .5rem #FFF;
+          }
+        }
+      }
+    }
+
+    .status-box {
+      position: fixed;
+      right: 0;
+      display: flex;
+      align-items: center;
+      height: 50px;
+    }
   }
 }

@@ -3,6 +3,7 @@ import React, { FC, useEffect, useState } from 'react';
 import { Switch } from 'antd';
 import IconFont from '@/components/IconFont';
 import NenoFont from '@/components/NenoFont';
+import AuthoLoginIcons from './components/AuthoLoginIcons';
 
 import { observer } from 'mobx-react-lite';
 import { ThemeEnum, NenoFontEnum } from '@/enums/appEnum';
@@ -34,8 +35,6 @@ const Login: FC = observer(() => {
   // 切换主题颜色
   const toggleDarkMode = (checked: boolean) => {
     const darkMode = checked ? ThemeEnum.LIGHT : ThemeEnum.DARK;
-
-    console.log(darkMode);
     appStore.setDarkMode(darkMode);
     setDarkMode(checked);
     updateDarkThem(darkMode);
@@ -43,7 +42,7 @@ const Login: FC = observer(() => {
 
   return (
     <div className="root-content">
-      <div className="login-content">
+      <div className="login-content animate__animated animate__zoomIn">
         <div className="f_c">
           <NenoFont
             content={VITE_GLOB_APP_TITLE}
@@ -68,6 +67,7 @@ const Login: FC = observer(() => {
           <div className="input-box">
             <input type="submit" name="submit" value="登入" />
           </div>
+          <AuthoLoginIcons />
         </div>
       </div>
       <div className="status-box">
