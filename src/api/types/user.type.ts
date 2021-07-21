@@ -1,6 +1,7 @@
-export interface LoginResult {
+export interface UserInfo {
   username: string;
-  password: string;
-  sex: number;
+  realname: string;
+  avatar: string;
   auth: string;
+  token: string;
 }
