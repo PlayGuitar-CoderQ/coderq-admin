@@ -3,7 +3,7 @@ import { resultSuccess } from '../_utils';
 
 export default [
   {
-    url: '/login',
+    url: '/getUserInfo',
     timeout: 200,
     method: 'get',
     response: () => {

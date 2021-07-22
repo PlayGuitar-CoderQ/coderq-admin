@@ -9,27 +9,21 @@ import { observer } from 'mobx-react-lite';
 import { ThemeEnum, NenoFontEnum } from '@/enums/appEnum';
 import { useStore } from '@/hooks/setting';
 import { APP_STORE } from '@/store/model/appStore';
+// import { USER_STORE } from '@/store/model/userStore';
 import { updateDarkThem } from '@/logic/theme/dark';
 import { getAppEnvConfig } from '@/utils/env';
+import { getUserInfo } from '@/api/user';
 import './index.less';
 
 const Login: FC = observer(() => {
   const { VITE_GLOB_APP_TITLE } = getAppEnvConfig();
   const appStore = useStore(APP_STORE);
+  // const userStore = useStore(USER_STORE);
   const [darkMode, setDarkMode] = useState(true);
-  // const [isTransition, setIsTransition] = useState(false);
 
   useEffect(() => {
     const checked = appStore.darkMode === ThemeEnum.LIGHT ? true : false;
     setDarkMode(checked);
-    console.log(
-      'appStore.darkMode',
-      checked,
-      appStore.darkMode,
-      ThemeEnum.LIGHT,
-      darkMode,
-    );
-    // setIsTransition(true);
   }, []);
 
   // 切换主题颜色
@@ -41,8 +35,9 @@ const Login: FC = observer(() => {
   };
 
   // 登陆系统
-  const onLogin = () => {
-    appStore.setWaitNotificationAppLogin();
+  const onLogin = async () => {
+    const data = await getUserInfo();
+    console.log(data);
   };
 
   return (

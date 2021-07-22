@@ -15,7 +15,6 @@ const HeaderComponents: FC = observer(() => {
   const navigate = useNavigate();
 
   const loginOut = () => {
-    console.log('213');
     navigate({ pathname: '/login' });
   };
   return (
