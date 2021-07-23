@@ -17,6 +17,7 @@ export class VAxios {
   constructor(options: CreateAxiosOptions) {
     this.options = options;
     this.axiosIntstance = axios.create(options);
+    this.setupInterceptors();
     // 注入拦截器留个空-----
   }
 
@@ -62,6 +63,25 @@ export class VAxios {
     Object.assign(this.axiosIntstance.defaults.headers, headers);
   }
 
+  private setupInterceptors() {
+    const transform = this.getTransform();
+    if (!transform) {
+      return;
+    }
+
+    const { requestInterceptors } = transform;
+
+    this.axiosIntstance.interceptors.request.use(
+      (config: AxiosRequestConfig) => {
+        if (requestInterceptors && isFunction(requestInterceptors)) {
+          config = requestInterceptors(config, this.options);
+        }
+        return config;
+      },
+      undefined,
+    );
+  }
+
   /**
    * @description 支持表格数据提交
    */
@@ -95,6 +115,7 @@ export class VAxios {
     options?: RequestOptions,
   ): Promise<T> {
     let conf: CreateAxiosOptions = cloneDeep(config);
+
     const transform = this.getTransform();
 
     const { requestOptions } = this.options;

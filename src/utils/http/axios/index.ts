@@ -119,7 +119,9 @@ const transform: AxiosTransform = {
   requestInterceptors: (config, options) => {
     // 请求之前处理config
     // 预留获取token
+    console.log('config', config, options);
     const token = '';
+
     if (token) {
       // jwt token
       config.headers.Authorization = options.authenticationScheme
@@ -132,7 +134,9 @@ const transform: AxiosTransform = {
   /**
    * @description: 响应拦截器处理
    */
+
   responseInterceptors: (res: AxiosResponse<any>) => {
+    console.log('res', res);
     return res;
   },
 
