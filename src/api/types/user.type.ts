@@ -4,4 +4,5 @@ export interface UserInfo {
   avatar: string;
   auth: string;
   token: string;
+  password: string;
 }
