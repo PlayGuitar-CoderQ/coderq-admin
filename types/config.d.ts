@@ -1,3 +1,5 @@
+import { CacheTypeEnum } from '@/enums/cachEnum';
+
 // 全局环境变量类型
 export interface GlobEnvConfg {
   // 项目名称
@@ -22,4 +24,10 @@ export interface GlobConfig {
   urlPrefix?: string;
   // 接口地址
   apiUrl: string;
+}
+
+// 项目配置
+export interface ProjectConfig {
+  // 权限相关信息的储存位置位置 1 | 0
+  permissionCacheType: CacheTypeEnum;
 }
