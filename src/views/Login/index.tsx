@@ -15,6 +15,10 @@ import { getAppEnvConfig } from '@/utils/env';
 import { getUserInfo } from '@/api/user';
 import './index.less';
 
+import { TOKEN_KEY } from '@/enums/cachEnum';
+import { createLocalStorage } from '@/utils/cache';
+const ls = createLocalStorage();
+
 const Login: FC = observer(() => {
   const { VITE_GLOB_APP_TITLE } = getAppEnvConfig();
   const appStore = useStore(APP_STORE);
@@ -37,7 +41,8 @@ const Login: FC = observer(() => {
   // 登陆系统
   const onLogin = async () => {
     const data = await getUserInfo();
-    console.log(data);
+    ls.set(TOKEN_KEY, data?.token || '');
+    console.log(data.token);
   };
 
   return (

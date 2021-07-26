@@ -5,8 +5,10 @@ export default [
   {
     url: '/getUserInfo',
     timeout: 200,
-    method: 'get',
-    response: () => {
+    method: 'post',
+    response: ({ body }) => {
+      const { username, password } = body;
+      console.log('res', username, password);
       return resultSuccess({
         username: 'coderqadmin',
         realname: '弹吉他的CoderQ',
