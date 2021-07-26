@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useEffect, useState, useRef } from 'react';
 
 import { Switch } from 'antd';
 import IconFont from '@/components/IconFont';
@@ -12,7 +12,7 @@ import { APP_STORE } from '@/store/model/appStore';
 // import { USER_STORE } from '@/store/model/userStore';
 import { updateDarkThem } from '@/logic/theme/dark';
 import { getAppEnvConfig } from '@/utils/env';
-import { getUserInfo } from '@/api/user';
+import { login } from '@/api/user';
 import './index.less';
 
 import { TOKEN_KEY } from '@/enums/cachEnum';
@@ -20,6 +20,8 @@ import { createLocalStorage } from '@/utils/cache';
 const ls = createLocalStorage();
 
 const Login: FC = observer(() => {
+  const usernameElement = useRef();
+  const passwordElement = useRef();
   const { VITE_GLOB_APP_TITLE } = getAppEnvConfig();
   const appStore = useStore(APP_STORE);
   // const userStore = useStore(USER_STORE);
@@ -40,9 +42,8 @@ const Login: FC = observer(() => {
 
   // 登陆系统
   const onLogin = async () => {
-    const data = await getUserInfo();
-    ls.set(TOKEN_KEY, data?.token || '');
-    console.log(data.token);
+    const data = await login({ username: 'coderq', password: '123456' });
+    console.log(data);
   };
 
   return (
