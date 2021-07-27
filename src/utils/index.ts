@@ -1,4 +1,12 @@
 import { isObject } from '@/utils/is';
+
+/**
+ *@description 深度合并对象方法
+
+ * @param src 要合并的对象
+ * @param target 合并的目标对象
+ * @returns { src } 返回合并的对象
+ */
 export function deepMerge<T = any>(src: any = {}, target: any = {}): T {
   let key: string;
   for (key in target) {
@@ -10,7 +18,7 @@ export function deepMerge<T = any>(src: any = {}, target: any = {}): T {
 }
 
 /**
- * Add the object as a parameter to the URL
+ * @description 将对象作为参数添加到 URL
  * @param baseUrl url
  * @param obj
  * @returns {string}

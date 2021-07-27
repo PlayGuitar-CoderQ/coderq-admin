@@ -42,8 +42,13 @@ const Login: FC = observer(() => {
 
   // 登陆系统
   const onLogin = async () => {
-    const data = await login({ username: 'coderq', password: '123456' });
-    console.log(data);
+    login({ username: 'coderq', password: '123456' })
+      .then((res) => {
+        console.log('res', res);
+      })
+      .catch((err) => {
+        console.log('err', err);
+      });
   };
 
   return (

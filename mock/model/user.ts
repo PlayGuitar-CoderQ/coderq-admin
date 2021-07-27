@@ -1,6 +1,7 @@
-import { message } from 'antd';
 import { MockMethod } from 'vite-plugin-mock';
 import { resultSuccess } from '../_utils';
+
+import { resultError } from '../_utils';
 
 export function createFakeUserList() {
   return [
@@ -13,20 +14,27 @@ export function createFakeUserList() {
   ];
 }
 
+function checkUser(username: string, password: string): boolean {
+  if (username === 'coderq' && password === '123456') {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 export default [
   {
-    url: '/adminLogin',
+    url: '/coderq-api/adminLogin',
     timeout: 200,
     method: 'post',
     response: ({ body }) => {
       const { username, password } = body;
-      const checkUser = createFakeUserList().find((item) => {
-        item.username === username && item.password === password;
-      });
-      if (!checkUser) {
-        message.error('账号密码错误');
+      const isUser = checkUser(username, password);
+
+      if (!isUser) {
+        return resultError('不正确的账号和密码');
       }
-      console.log('res', username, password);
+
       return resultSuccess({
         username: 'coderqadmin',
         realname: '弹吉他的CoderQ',

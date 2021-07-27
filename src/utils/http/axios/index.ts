@@ -143,12 +143,20 @@ const transform: AxiosTransform = {
   // 预留---- 错误代码出来
 };
 
+/**
+ * @description 创建axios对象实例
+ * @param opt axios配置对象
+ * @returns { obt } 合并的axios对象
+ */
 function createAxios(opt?: Partial<CreateAxiosOptions>) {
   return new VAxios(
     deepMerge(
       {
+        // 认证方案 Bear
         authenticationScheme: '',
+        // 接口超时时间 单位毫秒
         timeout: 10 * 1000,
+        // 接口通用地址部分，统一抽取
         urlPrefix: urlPrefix,
         headers: { 'Content-Type': ContentTypeEnum.JSON },
         // 数据处理方式
@@ -169,8 +177,8 @@ function createAxios(opt?: Partial<CreateAxiosOptions>) {
           errorMessageMode: 'message',
           // 接口地址
           apiUrl: globSetting.apiUrl,
-          //  是否加入时间戳
-          joinTime: true,
+          // 是否加入时间戳
+          joinTime: false,
           // 忽略重复请求
           ignoreCancelToken: true,
           // 是否携带token
