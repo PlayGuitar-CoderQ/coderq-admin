@@ -3,7 +3,7 @@ import { createProdMockServer } from 'vite-plugin-mock/es/createProdMockServer';
 const modules = import.meta.globEager('./**/*.ts');
 
 const mockModules: any[] = [];
-Object.keys(mockModules).forEach((key) => {
+Object.keys(modules).forEach((key) => {
   // 去除私有的方法
   if (key.includes('/_')) {
     return;

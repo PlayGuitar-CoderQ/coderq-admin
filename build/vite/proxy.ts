@@ -24,6 +24,7 @@ export function createProxy(list: ProxyList = []) {
   // 从env.development定义的proxy元组
   for (const [prefix, target] of list) {
     const isHttps = httpsRE.test(target); // 判断是否为https
+    console.log('target', target, prefix);
 
     ret[prefix] = {
       target: target, // 要解析的url字符串
