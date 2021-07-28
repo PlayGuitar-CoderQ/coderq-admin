@@ -7,3 +7,9 @@ export function login(params) {
     params,
   });
 }
+
+export function getUserInfo() {
+  return defHttp.get<UserInfo>({
+    url: '/getUserInfo',
+  });
+}

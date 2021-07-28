@@ -17,6 +17,7 @@ import './index.less';
 
 import { TOKEN_KEY } from '@/enums/cachEnum';
 import { createLocalStorage } from '@/utils/cache';
+import userStore from '@/store/model/userStore';
 const ls = createLocalStorage();
 
 const Login: FC = observer(() => {
@@ -42,13 +43,14 @@ const Login: FC = observer(() => {
 
   // 登陆系统
   const onLogin = async () => {
-    login({ username: 'coderq', password: '123456' })
-      .then((res) => {
-        console.log('res', res);
-      })
-      .catch((err) => {
-        console.log('err', err);
-      });
+    userStore.login();
+    // login({ username: 'coderq', password: '123456' })
+    //   .then((res) => {
+    //     console.log('res', res);
+    //   })
+    //   .catch((err) => {
+    //     console.log('err', err);
+    //   });
   };
 
   return (

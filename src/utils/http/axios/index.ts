@@ -2,13 +2,13 @@ import type { AxiosResponse } from 'axios';
 import type { AxiosTransform, CreateAxiosOptions } from './axiosTransform';
 
 import { joinTimestamp, formatRequestDate } from './helper';
+import { useGlobSetting } from '@/hooks/setting/getEnv';
 import { ContentTypeEnum, RequestEnum, ResultEnum } from '@/enums/httpEnum';
 import { VAxios } from './Axios';
 import { deepMerge } from '@/utils';
 import { setObjToUrlParams } from '@/utils';
 import { Result, RequestOptions } from '#/axios';
 import { isString } from '@/utils/is';
-import { useGlobSetting } from '@/hooks/setting';
 const globSetting = useGlobSetting();
 const urlPrefix = globSetting.urlPrefix;
 

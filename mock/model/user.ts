@@ -44,4 +44,19 @@ export default [
       });
     },
   },
+
+  {
+    url: '/coderq-api/getUserInfo',
+    timeout: 200,
+    method: 'get',
+    response: () => {
+      return resultSuccess({
+        username: 'coderqadmin',
+        realname: '弹吉他的CoderQ',
+        avatar: 'https://urlify.cn/ueY3ia',
+        auth: 'admin',
+        token: 'SADAS23131454kjnkjnkjn34kj2n4kjn32k',
+      });
+    },
+  },
 ] as MockMethod[];
