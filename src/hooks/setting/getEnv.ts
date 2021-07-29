@@ -2,7 +2,6 @@ import type { GlobConfig } from '#/config';
 import { getAppEnvConfig } from '@/utils/env';
 
 export const useGlobSetting = (): Readonly<GlobConfig> => {
-  console.log('触发');
   const {
     VITE_GLOB_APP_SHORT_NAME,
     VITE_GLOB_APP_TITLE,

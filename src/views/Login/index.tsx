@@ -1,49 +1,27 @@
-import React, { FC, useEffect, useState, useRef } from 'react';
-
-import { Switch } from 'antd';
-import IconFont from '@/components/IconFont';
-import NenoFont from '@/components/NenoFont';
-import AuthoLoginIcons from './components/AuthoLoginIcons';
-
-import { observer } from 'mobx-react-lite';
-import { ThemeEnum, NenoFontEnum } from '@/enums/appEnum';
-import { useStore } from '@/hooks/setting';
-import { APP_STORE } from '@/store/model/appStore';
-// import { USER_STORE } from '@/store/model/userStore';
-import { updateDarkThem } from '@/logic/theme/dark';
-import { getAppEnvConfig } from '@/utils/env';
-import { login } from '@/api/user';
+import React, { FC, useState } from 'react';
 import './index.less';
 
-import { TOKEN_KEY } from '@/enums/cachEnum';
-import { createLocalStorage } from '@/utils/cache';
+import NenoFont from '@/components/NenoFont';
+import AuthoLoginIcons from './components/AuthoLoginIcons';
+import SwitchDark from './components/SwitchDark';
+
+import { observer } from 'mobx-react-lite';
+import { NenoFontEnum } from '@/enums/appEnum';
+import { getAppEnvConfig } from '@/utils/env';
+
 import userStore from '@/store/model/userStore';
-const ls = createLocalStorage();
 
 const Login: FC = observer(() => {
-  const usernameElement = useRef();
-  const passwordElement = useRef();
+  // 项目总名称
   const { VITE_GLOB_APP_TITLE } = getAppEnvConfig();
-  const appStore = useStore(APP_STORE);
-  // const userStore = useStore(USER_STORE);
-  const [darkMode, setDarkMode] = useState(true);
 
-  useEffect(() => {
-    const checked = appStore.darkMode === ThemeEnum.LIGHT ? true : false;
-    setDarkMode(checked);
-  }, []);
-
-  // 切换主题颜色
-  const onToggleDarkMode = (checked: boolean) => {
-    const darkMode = checked ? ThemeEnum.LIGHT : ThemeEnum.DARK;
-    appStore.setDarkMode(darkMode);
-    setDarkMode(checked);
-    updateDarkThem(darkMode);
-  };
+  const [userName, setUserName] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
 
   // 登陆系统
   const onLogin = async () => {
-    userStore.login();
+    console.log(userName, password);
+    // userStore.login();
     // login({ username: 'coderq', password: '123456' })
     //   .then((res) => {
     //     console.log('res', res);
@@ -67,7 +45,13 @@ const Login: FC = observer(() => {
         <div className="login-form">
           <div className="input-box">
             <label htmlFor="username">用户账号</label>
-            <input type="text" name="username" placeholder="请输入用户账号" />
+            <input
+              type="text"
+              name="username"
+              placeholder="请输入用户账号"
+              value={userName}
+              onChange={(e) => setUserName(e.target.value)}
+            />
           </div>
           <div className="input-box">
             <label htmlFor="password">用户密码</label>
@@ -75,6 +59,8 @@ const Login: FC = observer(() => {
               type="password"
               name="password"
               placeholder="请输入用户密码"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div className="input-box">
@@ -89,12 +75,7 @@ const Login: FC = observer(() => {
         </div>
       </div>
       <div className="status-box">
-        <Switch
-          onChange={(e) => onToggleDarkMode(e)}
-          checked={darkMode}
-          checkedChildren={<IconFont type="icon-taiyang" />}
-          unCheckedChildren={<IconFont type="icon-yueliang" />}
-        />
+        <SwitchDark />
       </div>
     </div>
   );

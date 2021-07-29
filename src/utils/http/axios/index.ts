@@ -119,7 +119,6 @@ const transform: AxiosTransform = {
   requestInterceptors: (config, options) => {
     // 请求之前处理config
     // 预留获取token
-    console.log('config', config, options);
     const token = '';
 
     if (token) {
