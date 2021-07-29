@@ -21,6 +21,12 @@ const Login: FC = observer(() => {
   // 登陆系统
   const onLogin = async () => {
     console.log(userName, password);
+    try {
+      const userInfo = await userStore.login({ userName, password });
+      console.log('获取到的用户信息', userInfo);
+    } catch (error) {
+      console.log('登陆页面', error);
+    }
     // userStore.login();
     // login({ username: 'coderq', password: '123456' })
     //   .then((res) => {

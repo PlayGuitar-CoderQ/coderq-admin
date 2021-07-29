@@ -14,8 +14,9 @@ export function createFakeUserList() {
   ];
 }
 
-function checkUser(username: string, password: string): boolean {
-  if (username === 'coderq' && password === '123456') {
+function checkUser(userName: string, password: string): boolean {
+  console.log('1++++', userName, password);
+  if (userName === 'coderq' && password === '123456') {
     return true;
   } else {
     return false;
@@ -28,13 +29,12 @@ export default [
     timeout: 200,
     method: 'post',
     response: ({ body }) => {
-      const { username, password } = body;
-      const isUser = checkUser(username, password);
-
+      console.log('body', body);
+      const { userName, password } = body;
+      const isUser = checkUser(userName, password);
       if (!isUser) {
         return resultError('不正确的账号和密码');
       }
-
       return resultSuccess({
         username: 'coderqadmin',
         realname: '弹吉他的CoderQ',

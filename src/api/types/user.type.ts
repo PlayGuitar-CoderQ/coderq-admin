@@ -6,3 +6,8 @@ export interface UserInfo {
   token: string;
   password: string;
 }
+
+export interface LoginParams {
+  userName: string;
+  password: string;
+}
