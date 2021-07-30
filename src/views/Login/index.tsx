@@ -8,12 +8,14 @@ import SwitchDark from './components/SwitchDark';
 import { observer } from 'mobx-react-lite';
 import { NenoFontEnum } from '@/enums/appEnum';
 import { getAppEnvConfig } from '@/utils/env';
+import { useNavigate } from 'react-router-dom';
 
 import userStore from '@/store/model/userStore';
 
 const Login: FC = observer(() => {
   // 项目总名称
   const { VITE_GLOB_APP_TITLE } = getAppEnvConfig();
+  const navigate = useNavigate();
 
   const [userName, setUserName] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -23,18 +25,11 @@ const Login: FC = observer(() => {
     console.log(userName, password);
     try {
       const userInfo = await userStore.login({ userName, password });
+      userInfo && navigate({ pathname: '/' });
       console.log('获取到的用户信息', userInfo);
     } catch (error) {
       console.log('登陆页面', error);
     }
-    // userStore.login();
-    // login({ username: 'coderq', password: '123456' })
-    //   .then((res) => {
-    //     console.log('res', res);
-    //   })
-    //   .catch((err) => {
-    //     console.log('err', err);
-    //   });
   };
 
   return (

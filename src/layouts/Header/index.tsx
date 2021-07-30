@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import './index.less';
 
 import { observer } from 'mobx-react-lite';
+import { TOKEN_KEY } from '@/enums/cachEnum';
+import { createLocalStorage } from '@/utils/cache';
 
 import { Layout } from 'antd';
 import CollasedIcon from './components/CollapsedIcon';
@@ -12,9 +14,11 @@ import IconFont from '@/components/IconFont';
 const { Header } = Layout;
 
 const HeaderComponents: FC = observer(() => {
+  const ls = createLocalStorage(TOKEN_KEY);
   const navigate = useNavigate();
 
   const loginOut = () => {
+    ls.clear();
     navigate({ pathname: '/login' });
   };
   return (

@@ -3,7 +3,6 @@ import { Button } from 'antd';
 import { observer } from 'mobx-react-lite';
 import { useNavigate } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
-import { loginApi } from '@/api/user';
 import './index.less';
 
 const Dashboard: FC = observer(() => {
@@ -11,8 +10,7 @@ const Dashboard: FC = observer(() => {
   const [show, setShow] = useState(false);
 
   const testMock = async () => {
-    const res = await loginApi();
-    console.log(123, res);
+    console.log(123);
   };
 
   const onBackLogin = () => {
