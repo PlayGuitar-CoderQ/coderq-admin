@@ -38,7 +38,7 @@ export default [
       return resultSuccess({
         username: 'coderqadmin',
         realname: '弹吉他的CoderQ',
-        avatar: 'https://urlify.cn/ueY3ia',
+        avatar: 'https://z3.ax1x.com/2021/08/02/fSQVB9.jpg',
         auth: 'admin',
         token: 'SADAS23131454kjnkjnkjn34kj2n4kjn32k',
       });
@@ -53,7 +53,7 @@ export default [
       return resultSuccess({
         username: 'coderqadmin',
         realname: '弹吉他的CoderQ',
-        avatar: 'https://urlify.cn/ueY3ia',
+        avatar: 'https://z3.ax1x.com/2021/08/02/fSQVB9.jpg',
         auth: 'admin',
         token: 'SADAS23131454kjnkjnkjn34kj2n4kjn32k',
       });
