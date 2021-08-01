@@ -4,17 +4,16 @@ import { useNavigate } from 'react-router-dom';
 import './index.less';
 
 import { observer } from 'mobx-react-lite';
-import { TOKEN_KEY } from '@/enums/cachEnum';
 import { createLocalStorage } from '@/utils/cache';
 
-import { Layout } from 'antd';
+import { Layout, Avatar } from 'antd';
 import CollasedIcon from './components/CollapsedIcon';
 import IconFont from '@/components/IconFont';
 
 const { Header } = Layout;
 
 const HeaderComponents: FC = observer(() => {
-  const ls = createLocalStorage(TOKEN_KEY);
+  const ls = createLocalStorage();
   const navigate = useNavigate();
 
   const loginOut = () => {
@@ -25,6 +24,7 @@ const HeaderComponents: FC = observer(() => {
     <Header style={{ padding: '0 0 0 15px', background: '#fff' }}>
       <div className="f_b header-content">
         <CollasedIcon />
+        <Avatar />
         <IconFont
           onClick={() => loginOut()}
           type={'icon-tuichu'}
