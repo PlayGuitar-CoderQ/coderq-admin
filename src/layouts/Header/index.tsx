@@ -7,7 +7,7 @@ import { observer } from 'mobx-react-lite';
 import { createLocalStorage } from '@/utils/cache';
 
 import { Layout, Avatar } from 'antd';
-import CollasedIcon from './components/CollapsedIcon';
+import CollapsedIcon from './components/CollapsedIcon';
 import IconFont from '@/components/IconFont';
 
 import userStore from '@/store/model/userStore';
@@ -26,7 +26,7 @@ const HeaderComponents: FC = observer(() => {
   return (
     <Header style={{ padding: '0 0 0 15px', background: '#fff' }}>
       <div className="f_b header-content">
-        <CollasedIcon />
+        <CollapsedIcon />
         <div className="f_c">
           <Avatar src={userInfo.avatar} style={{ marginRight: '20px' }} />
           <IconFont

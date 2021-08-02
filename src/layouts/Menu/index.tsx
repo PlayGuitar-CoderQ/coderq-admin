@@ -7,14 +7,18 @@ import {
   VideoCameraOutlined,
   UploadOutlined,
 } from '@ant-design/icons';
-import { Layout, Menu } from 'antd';
+import NenoFont from '@/components/NenoFont';
+import { Layout, Menu, Avatar } from 'antd';
 const { Sider } = Layout;
 
 import { useStore } from '@/hooks/setting';
 import { APP_STORE } from '@/store/model/appStore';
+import { getAppEnvConfig } from '@/utils/env';
 
 const MenuComponent: FC = observer(() => {
   const appStore = useStore(APP_STORE);
+  const { VITE_GLOB_APP_TITLE } = getAppEnvConfig();
+
   return (
     <Sider
       trigger={null}
@@ -22,7 +26,25 @@ const MenuComponent: FC = observer(() => {
       collapsed={appStore.collapsed}
       style={{ height: '100vh' }}
     >
-      <div className="logo" />
+      <div className="logo">
+        {!appStore.collapsed ? (
+          <NenoFont
+            className={'animate__animated animate__bounceIn'}
+            content={VITE_GLOB_APP_TITLE}
+            color={'orange'}
+            size={'mini'}
+          />
+        ) : (
+          <Avatar
+            className={'animate__animated animate__fadeInLeft'}
+            size={45}
+            src={
+              'https://portrait.gitee.com/uploads/avatars/user/2698/8096010_qiu-zijian_1625647312.png!avatar30'
+            }
+          />
+        )}
+      </div>
+
       <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
         <Menu.Item key="1" icon={<UserOutlined />}>
           nav 1
