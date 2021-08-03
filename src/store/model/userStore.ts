@@ -17,7 +17,7 @@ export interface UserStore {
 }
 
 const userStore = makeAutoObservable<UserStore>({
-  userInfo: {} as UserInfo,
+  userInfo: ls.get(USER_INFO),
 
   token: undefined,
 

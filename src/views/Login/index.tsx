@@ -28,7 +28,7 @@ const Login: FC = observer(() => {
       userInfo && navigate({ pathname: '/' });
       console.log('获取到的用户信息', userInfo);
     } catch (error) {
-      console.log('登陆页面', error);
+      console.error('登陆页面', error);
     }
   };
 

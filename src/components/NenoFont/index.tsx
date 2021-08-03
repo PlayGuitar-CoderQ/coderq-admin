@@ -1,12 +1,12 @@
 import type { FC } from 'react';
-import React, { useEffect } from 'react';
+import React from 'react';
 import './index.less';
 
 export interface NenoFontProps {
   content: string;
   color?: string;
   size?: string;
-  className: string;
+  className?: string;
 }
 
 const NenoFont: FC<NenoFontProps> = ({
@@ -15,9 +15,6 @@ const NenoFont: FC<NenoFontProps> = ({
   size = 'small',
   className = '',
 }) => {
-  useEffect(() => {
-    console.log(className);
-  }, []);
   return <a className={`neno-${color} neno-${size} ${className}`}>{content}</a>;
 };
 
