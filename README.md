@@ -1,4 +1,4 @@
-<div align="center"> <img alt="CoderQ" width="200" height="200" src="https://github.com/PlayGuitar-CoderQ/static-resource/blob/main/logo.png"><br> <br>
+<div align="center"> <img alt="CoderQ" width="200" height="200" src="https://imgtu.com/i/fFDh1P"><br> <br>
 
 [![license](https://img.shields.io/badge/React-17.0.0-blue?logo=React)](LICENSE)
 [![license](https://img.shields.io/badge/Mobx-6.3.2-orange?logo=Mobx)](LICENSE)
