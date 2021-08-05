@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { observer } from 'mobx-react-lite';
 import './index.less';
 
-import { UserOutlined } from '@ant-design/icons';
+import IconFont from '@/components/IconFont';
 import LeftTopLogo from './components/LeftTopLogo';
 import { Layout, Menu } from 'antd';
 const { Sider } = Layout;
@@ -24,7 +24,15 @@ const MenuComponent: FC = observer(() => {
       <LeftTopLogo />
 
       <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-        <Item key="1" icon={<UserOutlined />}>
+        <Item
+          key="1"
+          icon={
+            <IconFont
+              type="icon-jiagouzixun_huaban"
+              style={{ fontSize: '20px' }}
+            />
+          }
+        >
           项目规划板块
         </Item>
       </Menu>

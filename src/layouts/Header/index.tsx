@@ -6,7 +6,7 @@ import './index.less';
 import { observer } from 'mobx-react-lite';
 import { createLocalStorage } from '@/utils/cache';
 
-import { Layout, Avatar, Divider } from 'antd';
+import { Layout, Avatar, Divider, Space } from 'antd';
 import CollapsedIcon from './components/CollapsedIcon';
 import IconFont from '@/components/IconFont';
 
@@ -27,11 +27,16 @@ const HeaderComponents: FC = observer(() => {
     <Header style={{ padding: '0 0 0 15px', background: '#fff' }}>
       <div className="f_b header-content">
         <CollapsedIcon />
+
         <div className="f_c">
           <IconFont
+            type="icon-guoji"
+            style={{ fontSize: '30px', cursor: 'pointer', marginRight: '20px' }}
+          />
+          <IconFont
             onClick={() => loginOut()}
-            type={'icon-tuichu'}
-            style={{ fontSize: '40px', cursor: 'pointer' }}
+            type="icon-tuichu1"
+            style={{ fontSize: '30px', cursor: 'pointer' }}
           />
 
           <Divider type="vertical" style={{ height: '40px' }} />
