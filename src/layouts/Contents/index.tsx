@@ -7,7 +7,7 @@ const { Content } = Layout;
 
 const ContentComponent: FC = () => {
   return (
-    <Content>
+    <Content style={{ border: '1px solid red' }}>
       <Outlet />
     </Content>
   );
