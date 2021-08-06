@@ -2,6 +2,39 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://gitee.com/qiu-zijian/coderq-admin/compare/v1.2.0...v1.4.0) (2021-08-06)
+
+
+### Features
+
+*  ✨  新增左上角的个人Logo标识 ([1bdacb8](https://gitee.com/qiu-zijian/coderq-admin/commit/1bdacb89928809b5ec3c24242b38f8c8aa5e20c6))
+*  ✨ 完成登录页面重构 ([fcf134f](https://gitee.com/qiu-zijian/coderq-admin/commit/fcf134fea477281d9709cd062f8b5e03ef4b97dd))
+*  ✨ 新增存储token到持久缓存 ([1895426](https://gitee.com/qiu-zijian/coderq-admin/commit/18954260b6a346631fee615f07b903024806aa5a))
+*  ✨ 新增登陆的样式修改 ([239e68b](https://gitee.com/qiu-zijian/coderq-admin/commit/239e68b782866c22ef8671d959eadcb246deb912))
+*  ✨ 新增登陆界面媒体查询 ([01fb6b0](https://gitee.com/qiu-zijian/coderq-admin/commit/01fb6b01bfc015918221aae6fb226a0bce1c17d7))
+*  ✨ 新增国际化图标 ([22aec74](https://gitee.com/qiu-zijian/coderq-admin/commit/22aec74062e1493440401f5b41f54511e4399345))
+*  ✨ 新增路由守卫 ([da14257](https://gitee.com/qiu-zijian/coderq-admin/commit/da1425747007862086f15d0e8258c41661d49fc6))
+*  ✨ 新增一个userStore ([ddd9da2](https://gitee.com/qiu-zijian/coderq-admin/commit/ddd9da212418eb940e4771c82f4e6c7dd0c30986))
+*  ✨ 新增antv-x6可视化 ([7119cd2](https://gitee.com/qiu-zijian/coderq-admin/commit/7119cd25a26ef4d17c7beb965816cfd5374fa03d))
+*  ✨ 新增geuuserInfo字段 ([61f4a93](https://gitee.com/qiu-zijian/coderq-admin/commit/61f4a938fae9fd2a11cb13e45e0b9b59a50bdf22))
+*  ✨ 新增mock接口错误处理 ([359c290](https://gitee.com/qiu-zijian/coderq-admin/commit/359c290c15748898cfaaa0edd6b8a55f32c19d74))
+*  ✨ 植入拦截器 ([f0e18f0](https://gitee.com/qiu-zijian/coderq-admin/commit/f0e18f0600bde2efef924df18d1a7aedb5b37b06))
+*  ✨ Axios封装配置新增post请求 ([120ae1f](https://gitee.com/qiu-zijian/coderq-admin/commit/120ae1f2622e3071b2dafca470b975e05095a38c))
+* :sparkles: 新增用户头像 ([8af2071](https://gitee.com/qiu-zijian/coderq-admin/commit/8af20718b68dfe3d2a1bae5f1b8964ad5f46ee0a))
+* :sparkles: 新增用户头像 ([3df67f0](https://gitee.com/qiu-zijian/coderq-admin/commit/3df67f0f62157c81e0d07d2ee3e8905ac6770752))
+* ✨  新增Layout的content组件 ([0187e53](https://gitee.com/qiu-zijian/coderq-admin/commit/0187e5350fb211de8a21bbb90a03a1df46c40ea4))
+* ✨ 新增霓虹字体组件 ([af9c1e2](https://gitee.com/qiu-zijian/coderq-admin/commit/af9c1e2d9f3cdc2c2dfdd312167d39d2f5ff602a))
+* ✨ 新增Menu组件的封装 ([5cd1943](https://gitee.com/qiu-zijian/coderq-admin/commit/5cd19436d8539a95ef44bbe94007724fc088a655))
+* ✨ 增加退出登录按钮 ([4665054](https://gitee.com/qiu-zijian/coderq-admin/commit/46650544f42d8ad1271b4303936f06a49ddc54c8))
+* 🚑 替换icon链接,引入了新的图标 ([aad0af8](https://gitee.com/qiu-zijian/coderq-admin/commit/aad0af835c37d030b9d6c51888be84e472d35989))
+
+
+### Bug Fixes
+
+*  🐛  解决mobx的异步action问题 ([a17997c](https://gitee.com/qiu-zijian/coderq-admin/commit/a17997c1b4a3de30b6da5bf3f8a071be8bd28a42))
+*  🐛  解决useGetting  hook的初始化问题 ([1fdc127](https://gitee.com/qiu-zijian/coderq-admin/commit/1fdc127b10b9b011cbb1b99b0f78fd33d6707154))
+*  🐛  修复代理问题 ([5d0443b](https://gitee.com/qiu-zijian/coderq-admin/commit/5d0443bfadb5c975f93ce1cfe440ebb60e1ef644))
+
 ## 1.3.0 (2021-07-14)
 
 
