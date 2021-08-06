@@ -19,7 +19,7 @@ const MenuComponent: FC = observer(() => {
       trigger={null}
       collapsible
       collapsed={appStore.collapsed}
-      style={{ height: '100vh', border: '1px solid red' }}
+      style={{ height: '100vh' }}
     >
       <LeftTopLogo />
 

@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
+    "@antv/x6": "^1.25.3",
     "@types/mockjs": "^1.0.3",
     "antd": "^4.16.2",
     "axios": "^0.21.1",
