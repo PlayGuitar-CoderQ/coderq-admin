@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
 import { observer } from 'mobx-react-lite';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { PartialRouteObject } from 'react-router';
 import './index.less';
 
 import IconFont from '@/components/IconFont';
@@ -12,7 +14,14 @@ import { useStore } from '@/hooks/setting';
 import { APP_STORE } from '@/store/model/appStore';
 
 const MenuComponent: FC = observer(() => {
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
   const appStore = useStore(APP_STORE);
+
+  const onMenuTrigger = (route: PartialRouteObject) => {
+    if (route.path === pathname) return;
+    navigate({ pathname: route.path });
+  };
 
   return (
     <Sider
@@ -34,6 +43,18 @@ const MenuComponent: FC = observer(() => {
           }
         >
           项目规划板块
+        </Item>
+        <Item
+          onClick={(e) => onMenuTrigger(e)}
+          key="2"
+          icon={
+            <IconFont
+              type="icon-jiagouzixun_huaban"
+              style={{ fontSize: '20px' }}
+            />
+          }
+        >
+          测试404页面
         </Item>
       </Menu>
     </Sider>
