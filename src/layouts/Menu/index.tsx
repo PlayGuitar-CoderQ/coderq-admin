@@ -12,6 +12,7 @@ const { Item } = Menu;
 
 import { useStore } from '@/hooks/setting';
 import { APP_STORE } from '@/store/model/appStore';
+import { routeList } from '@/routes/model';
 
 const MenuComponent: FC = observer(() => {
   const navigate = useNavigate();
@@ -19,8 +20,9 @@ const MenuComponent: FC = observer(() => {
   const appStore = useStore(APP_STORE);
 
   const onMenuTrigger = (route: PartialRouteObject) => {
-    if (route.path === pathname) return;
-    navigate({ pathname: route.path });
+    // if (route.path === pathname) return;
+    // navigate({ pathname: route.path });
+    console.log(routeList[1]?.children);
   };
 
   return (
@@ -33,7 +35,20 @@ const MenuComponent: FC = observer(() => {
       <LeftTopLogo />
 
       <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-        <Item
+        {routeList[1]?.children?.map((route, index) => {
+          <Item
+            key={index}
+            icon={
+              <IconFont
+                type={route.element.props.icon}
+                style={{ fontSize: '20px' }}
+              />
+            }
+          >
+            {route.element.props.title}
+          </Item>;
+        })}
+        {/* <Item
           key="1"
           icon={
             <IconFont
@@ -45,7 +60,7 @@ const MenuComponent: FC = observer(() => {
           项目规划板块
         </Item>
         <Item
-          onClick={(e) => onMenuTrigger(e)}
+          onClick={(e: any) => onMenuTrigger(e)}
           key="2"
           icon={
             <IconFont
@@ -55,7 +70,7 @@ const MenuComponent: FC = observer(() => {
           }
         >
           测试404页面
-        </Item>
+        </Item> */}
       </Menu>
     </Sider>
   );

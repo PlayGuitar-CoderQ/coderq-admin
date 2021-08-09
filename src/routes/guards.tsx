@@ -14,7 +14,12 @@ const checkWhiteList = (pathName = ''): boolean => {
   return whiteList.some((item) => item === pathName);
 };
 
-const GuardRoute: FC<RouteProps> = (props) => {
+export interface RouteNewProps extends RouteProps {
+  title?: string;
+  icon?: string;
+}
+
+const GuardRoute: FC<RouteNewProps> = (props) => {
   const location = useLocation();
   const { pathname } = location;
   const token = ls.get(TOKEN_KEY);
