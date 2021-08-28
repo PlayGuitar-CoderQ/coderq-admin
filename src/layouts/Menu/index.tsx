@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { PartialRouteObject } from 'react-router';
@@ -19,10 +19,13 @@ const MenuComponent: FC = observer(() => {
   const { pathname } = useLocation();
   const appStore = useStore(APP_STORE);
 
-  const onMenuTrigger = (route: PartialRouteObject) => {
-    // if (route.path === pathname) return;
-    // navigate({ pathname: route.path });
-    console.log(routeList[1]?.children);
+  useEffect(() => {
+    onMenuTrigger();
+  }, []);
+
+  const onMenuTrigger = (path: string) => {
+    navigate({ pathname: path });
+    console.log(path);
   };
 
   return (
@@ -35,7 +38,23 @@ const MenuComponent: FC = observer(() => {
       <LeftTopLogo />
 
       <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-        {routeList[1]?.children?.map((route, index) => {
+        {routeList[1]?.children?.map((item, index) => {
+          return (
+            <Item
+              onClick={() => onMenuTrigger(item.path)}
+              key={index}
+              icon={
+                <IconFont
+                  type={item.element.props.icon}
+                  style={{ fontSize: '20px' }}
+                />
+              }
+            >
+              {item.element.props.title}
+            </Item>
+          );
+        })}
+        {/* {routeList[1]?.children?.map((route, index) => {
           <Item
             key={index}
             icon={
@@ -47,7 +66,7 @@ const MenuComponent: FC = observer(() => {
           >
             {route.element.props.title}
           </Item>;
-        })}
+        })} */}
         {/* <Item
           key="1"
           icon={
@@ -58,8 +77,8 @@ const MenuComponent: FC = observer(() => {
           }
         >
           项目规划板块
-        </Item>
-        <Item
+        </Item> */}
+        {/* <Item
           onClick={(e: any) => onMenuTrigger(e)}
           key="2"
           icon={
