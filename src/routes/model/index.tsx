@@ -1,5 +1,6 @@
 import React from 'react';
-import { PartialRouteObject } from 'react-router';
+import type { PartialRouteObject } from 'react-router';
+import type { MenuItem } from '../type';
 
 import { DashboradRoute } from './dashboard';
 import LoginPage from '@/views/Login';
@@ -10,4 +11,4 @@ export const LoginRoute: PartialRouteObject = {
   element: <GuardRoute element={<LoginPage />} />,
 };
 
-export const routeList = [LoginRoute, DashboradRoute];
+export const routeList = [LoginRoute, DashboradRoute] as MenuItem[];

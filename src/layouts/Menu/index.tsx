@@ -1,7 +1,6 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
 import { observer } from 'mobx-react-lite';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { PartialRouteObject } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import './index.less';
 
 import IconFont from '@/components/IconFont';
@@ -16,14 +15,9 @@ import { routeList } from '@/routes/model';
 
 const MenuComponent: FC = observer(() => {
   const navigate = useNavigate();
-  const { pathname } = useLocation();
   const appStore = useStore(APP_STORE);
 
-  useEffect(() => {
-    onMenuTrigger();
-  }, []);
-
-  const onMenuTrigger = (path: string) => {
+  const onMenuTrigger = (path?: string) => {
     navigate({ pathname: path });
     console.log(path);
   };
@@ -38,14 +32,14 @@ const MenuComponent: FC = observer(() => {
       <LeftTopLogo />
 
       <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-        {routeList[1]?.children?.map((item, index) => {
+        {routeList[1].children!.map((item, index) => {
           return (
             <Item
               onClick={() => onMenuTrigger(item.path)}
               key={index}
               icon={
                 <IconFont
-                  type={item.element.props.icon}
+                  type={item.element.props.icon!}
                   style={{ fontSize: '20px' }}
                 />
               }
@@ -54,42 +48,6 @@ const MenuComponent: FC = observer(() => {
             </Item>
           );
         })}
-        {/* {routeList[1]?.children?.map((route, index) => {
-          <Item
-            key={index}
-            icon={
-              <IconFont
-                type={route.element.props.icon}
-                style={{ fontSize: '20px' }}
-              />
-            }
-          >
-            {route.element.props.title}
-          </Item>;
-        })} */}
-        {/* <Item
-          key="1"
-          icon={
-            <IconFont
-              type="icon-jiagouzixun_huaban"
-              style={{ fontSize: '20px' }}
-            />
-          }
-        >
-          项目规划板块
-        </Item> */}
-        {/* <Item
-          onClick={(e: any) => onMenuTrigger(e)}
-          key="2"
-          icon={
-            <IconFont
-              type="icon-jiagouzixun_huaban"
-              style={{ fontSize: '20px' }}
-            />
-          }
-        >
-          测试404页面
-        </Item> */}
       </Menu>
     </Sider>
   );

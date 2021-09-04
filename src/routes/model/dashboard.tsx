@@ -1,6 +1,6 @@
 import React from 'react';
-import { PartialRouteObject } from 'react-router';
 import GuardRoute from '@/routes/guards';
+import type { PartialRouteObject } from 'react-router';
 
 import Layout from '@/layouts/index';
 import Dashboard from '@/views/Structure';
