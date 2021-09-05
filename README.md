@@ -92,6 +92,41 @@ yarn run build
 | Mobx7 | <a href="https://cn.mobx.js.org/" target="_blank">Github</a> |
 
 
+</br>
+
+
+## ⛔️ <font color=	#6495ED>Import 引入规则</font>
+
+#### 根据引入规范，开发者尽量遵守保持代码的可读性高
+
+⚠️ 注意：如果当前代码没有全部情况的引入，那么按照当前权重大小进行引入排列。
+
+</br>
+
+```javascript
+// 如果遇到需要引入类型统一提权到最高 ⚠️ 引入类型请使用import types
+import type { Plugin } from 'vite'
+import type { ReactElement } from 'react';
+
+// 框架相关
+import React from "react";
+import { Link } from "react-router-dom":
+
+// 样式区
+import "xxx.less || xxx.css ....";
+import cssStyle from "xxx.module.less";
+// 静态文件区
+import LoginBkg from  "/@/assets/Login/login_bkg.png"
+// 方法区
+import { isFunction } from '/@/utils/is'
+import { useScrollControl } from '/@/hooks/useScrollControl'
+
+// 组件区域
+import { Button } from "Antd";
+import LoginPage from "@/views/Login"
+```
+
+
 ## 🟢  浏览器支持
 
 推荐本地开发的 `Chrome 80 +` 浏览器支持现代浏览器，而不是 IE
