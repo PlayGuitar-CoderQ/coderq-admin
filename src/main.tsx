@@ -5,6 +5,7 @@ import { StoresProvider, stores } from '@/store';
 
 import '@/utils/console'; // console窗口打印个人标志
 import '@/styles/index.less';
+import 'animate.css';
 
 ReactDOM.render(
   <StoresProvider value={stores}>
