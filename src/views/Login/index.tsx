@@ -1,16 +1,18 @@
-import React, { FC, useState } from 'react';
-import './index.less';
+import type { FC } from 'react';
 
-import NenoFont from '@/components/NenoFont';
-import AuthoLoginIcons from './components/AuthoLoginIcons';
-import SwitchDark from './components/SwitchDark';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import './index.less';
 
 import { observer } from 'mobx-react-lite';
 import { NenoFontEnum } from '@/enums/appEnum';
 import { getAppEnvConfig } from '@/utils/env';
-import { useNavigate } from 'react-router-dom';
-
 import userStore from '@/store/model/userStore';
+
+import NenoFont from '@/components/NenoFont';
+import AuthoLoginIcons from './components/AuthoLoginIcons';
+import SwitchDark from './components/SwitchDark';
 
 const Login: FC = observer(() => {
   // 项目总名称

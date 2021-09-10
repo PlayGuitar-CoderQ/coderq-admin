@@ -2,17 +2,17 @@
  * @description 切换黑暗主题按钮
  * @author CoderQ
  */
-
 import type { FC } from 'react';
-import React, { useEffect, useState } from 'react';
 
-import { Switch } from 'antd';
-import IconFont from '@/components/IconFont';
+import React, { useEffect, useState } from 'react';
 
 import { useStore } from '@/hooks/setting';
 import { ThemeEnum } from '@/enums/appEnum';
 import { updateDarkThem } from '@/logic/theme/dark';
 import { APP_STORE } from '@/store/model/appStore';
+
+import { Switch } from 'antd';
+import IconFont from '@/components/IconFont';
 
 const SwitchDark: FC = () => {
   const appStore = useStore(APP_STORE);

@@ -3,14 +3,15 @@
  * @author CoderQ
  * tip: 可以根据需要前往阿里图标库配置自己项目的图标引入链接后，在配套的data.ts里写入需要显示的图标
  */
-
 import type { FC } from 'react';
+
 import React from 'react';
+
 import './index.less';
 
-import IconFont from '@/components/IconFont';
-
 import { IconList } from './data';
+
+import IconFont from '@/components/IconFont';
 
 const AuthoLoginIcons: FC = () => {
   return (

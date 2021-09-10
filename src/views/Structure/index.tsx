@@ -1,7 +1,10 @@
-import React, { FC, useRef, useEffect } from 'react';
-import { observer } from 'mobx-react-lite';
+import type { FC } from 'react';
+
+import React, { useRef, useEffect } from 'react';
+
 import './index.less';
 
+import { observer } from 'mobx-react-lite';
 import { data } from './data';
 import appStore from '@/store/model/appStore';
 
