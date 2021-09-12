@@ -1,6 +1,8 @@
-import React, { FC } from 'react';
+import type { FC } from 'react';
+
+import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react-lite';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './index.less';
 
 import IconFont from '@/components/IconFont';
@@ -14,8 +16,20 @@ import { APP_STORE } from '@/store/model/appStore';
 import { routeList } from '@/routes/model';
 
 const MenuComponent: FC = observer(() => {
+  const [keyIndex, setKeyIndex] = useState(0);
   const navigate = useNavigate();
+  const location = useLocation();
+  const { pathname } = location;
   const appStore = useStore(APP_STORE);
+
+  useEffect(() => {
+    const index = routeList[1].children?.findIndex((item) => {
+      console.log(item.path, pathname);
+      return item.path === pathname;
+    });
+    setKeyIndex(index);
+    console.log('index', index);
+  });
 
   const onMenuTrigger = (path?: string) => {
     navigate({ pathname: path });
@@ -31,7 +45,7 @@ const MenuComponent: FC = observer(() => {
     >
       <LeftTopLogo />
 
-      <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+      <Menu theme="dark" mode="inline" defaultSelectedKeys={[`${keyIndex}`]}>
         {routeList[1].children!.map((item, index) => {
           return (
             <Item
