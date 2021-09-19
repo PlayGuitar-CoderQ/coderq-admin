@@ -4,6 +4,7 @@ import type { PartialRouteObject } from 'react-router';
 
 import Layout from '@/layouts/index';
 import Dashboard from '@/views/Structure';
+import PunchInRecord from '@/views/PunchInRecord';
 import ErrorPage from '@/views/RequestPage/404';
 
 export const DashboradRoute: PartialRouteObject = {
@@ -16,6 +17,16 @@ export const DashboradRoute: PartialRouteObject = {
         <GuardRoute
           element={<Dashboard />}
           title="项目规划板块"
+          icon="icon-jiagouzixun_huaban"
+        />
+      ),
+    },
+    {
+      path: '/punchInRecord',
+      element: (
+        <GuardRoute
+          element={<PunchInRecord />}
+          title="打卡记录"
           icon="icon-jiagouzixun_huaban"
         />
       ),
