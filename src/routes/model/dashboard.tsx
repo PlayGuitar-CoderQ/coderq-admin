@@ -5,6 +5,7 @@ import type { PartialRouteObject } from 'react-router';
 import Layout from '@/layouts/index';
 import Dashboard from '@/views/Structure';
 import PunchInRecord from '@/views/PunchInRecord';
+import MobileDataRecord from '@/views/MobileDataRecord';
 import ErrorPage from '@/views/RequestPage/404';
 
 export const DashboradRoute: PartialRouteObject = {
@@ -27,6 +28,16 @@ export const DashboradRoute: PartialRouteObject = {
         <GuardRoute
           element={<PunchInRecord />}
           title="打卡记录"
+          icon="icon-jiagouzixun_huaban"
+        />
+      ),
+    },
+    {
+      path: '/mobileDataRecord',
+      element: (
+        <GuardRoute
+          element={<MobileDataRecord />}
+          title="移动端数据记录"
           icon="icon-jiagouzixun_huaban"
         />
       ),
