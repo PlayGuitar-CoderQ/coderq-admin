@@ -38,7 +38,7 @@ export const DashboradRoute: PartialRouteObject = {
         <GuardRoute
           element={<MobileDataRecord />}
           title="移动端数据记录"
-          icon="icon-jiagouzixun_huaban"
+          icon="icon-mianjitu-duidiepinghuasekuai"
         />
       ),
     },
