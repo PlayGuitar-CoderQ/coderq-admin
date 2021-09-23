@@ -9,7 +9,7 @@ export enum TypeWriterTextEnum {
 }
 
 export enum IconFontUrl {
-  ICONURL = '//at.alicdn.com/t/font_2622053_yyim7vhks5q.js',
+  ICONURL = '//at.alicdn.com/t/font_2622053_yxmd3ynayf.js',
 }
 
 export enum NenoFontEnum {

@@ -18,7 +18,7 @@ export const DashboradRoute: PartialRouteObject = {
         <GuardRoute
           element={<Dashboard />}
           title="项目规划板块"
-          icon="icon-jiagouzixun_huaban"
+          icon="icon-zuzhijiagou"
         />
       ),
     },
@@ -28,7 +28,7 @@ export const DashboradRoute: PartialRouteObject = {
         <GuardRoute
           element={<PunchInRecord />}
           title="打卡记录"
-          icon="icon-jiagouzixun_huaban"
+          icon="icon-daka"
         />
       ),
     },
@@ -38,7 +38,7 @@ export const DashboradRoute: PartialRouteObject = {
         <GuardRoute
           element={<MobileDataRecord />}
           title="移动端数据记录"
-          icon="icon-mianjitu-duidiepinghuasekuai"
+          icon="icon-yidongduan"
         />
       ),
     },
@@ -48,7 +48,7 @@ export const DashboradRoute: PartialRouteObject = {
         <GuardRoute
           element={<ErrorPage />}
           title="测试404页面"
-          icon="icon-jiagouzixun_huaban"
+          icon="icon-icon-test"
         />
       ),
     },
