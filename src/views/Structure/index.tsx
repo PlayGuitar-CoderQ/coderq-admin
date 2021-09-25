@@ -37,7 +37,7 @@ const Structure: FC = observer(() => {
   }, [collapsed]);
   return (
     <div className="structure-containers" ref={structureContainers}>
-      <div ref={container}></div>
+      <div className="structure-graph" ref={container}></div>
     </div>
   );
 });
